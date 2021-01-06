@@ -1,0 +1,863 @@
+object FrmPreferences: TFrmPreferences
+  Left = 167
+  Height = 585
+  Top = 233
+  Width = 519
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'Preferences'
+  ClientHeight = 585
+  ClientWidth = 519
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '0.9.28.2'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 392
+    Top = 193
+    Width = 519
+    Align = alClient
+    Caption = 'Disassembler Settings'
+    ClientHeight = 374
+    ClientWidth = 515
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object Label13: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'min length 12 recommended'
+      Top = 25
+      Width = 31
+      Caption = 'Label'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label14: TLabel
+      Left = 298
+      Height = 17
+      Hint = '4 hex characters'
+      Top = 50
+      Width = 47
+      Caption = 'Address'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label15: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'sets of 3 digits'
+      Top = 75
+      Width = 61
+      Caption = 'Hex Codes'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'Main Mnemonic'
+      Top = 100
+      Width = 59
+      Caption = 'Mnemonic'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label17: TLabel
+      Left = 298
+      Height = 17
+      Hint = '1st Mnemonic Argument'
+      Top = 126
+      Width = 67
+      Caption = 'Mnem Arg1'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label18: TLabel
+      Left = 298
+      Height = 17
+      Hint = '2nd Mnemonic argument'
+      Top = 150
+      Width = 67
+      Caption = 'Mnem Arg2'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label19: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'Address Refferred to'
+      Top = 175
+      Width = 101
+      Caption = 'Referred Address'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label20: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'Label referred to'
+      Top = 200
+      Width = 85
+      Caption = 'Referred Label'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label21: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'User Code line number'
+      Top = 225
+      Width = 100
+      Caption = 'User Code Line #'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label22: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'single hex code for instruction'
+      Top = 250
+      Width = 55
+      Caption = 'Hex Code'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label23: TLabel
+      Left = 298
+      Height = 17
+      Hint = 'Generated Comments'
+      Top = 275
+      Width = 62
+      Caption = 'Comments'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label24: TLabel
+      Left = 273
+      Height = 17
+      Top = 1
+      Width = 178
+      Caption = 'Disassembler Line Positions'
+      ParentColor = False
+    end
+    object Label26: TLabel
+      Left = 298
+      Height = 17
+      Top = 296
+      Width = 185
+      Caption = 'value 0 will not show parameter'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label25: TLabel
+      Left = 33
+      Height = 17
+      Top = 346
+      Width = 189
+      Caption = '(SDK41 mnemonics recommend)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object ChkComments: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Enable automatic Disassembler comment generation'
+      Top = 1
+      Width = 111
+      Caption = 'Auto Comments'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ChkAutoLabel: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Enable automatic label generation'
+      Top = 21
+      Width = 146
+      Caption = 'Auto Label Generation'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object ChkMainFrame: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Use MainFrame label file'
+      Top = 61
+      Width = 167
+      Caption = 'Use MainFrame Label File'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object ChkXROM: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'use XROM file'
+      Top = 81
+      Width = 104
+      Caption = 'Use XROM File'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object GrpMnem: TRadioGroup
+      Left = 13
+      Height = 97
+      Hint = 'Select preferred mnemonics type'
+      Top = 226
+      Width = 209
+      AutoFill = True
+      Caption = 'Mnemonics Type'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.TopBottomSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 79
+      ClientWidth = 205
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ItemIndex = 0
+      Items.Strings = (
+        'Jacobs/De Arras (JDA)'
+        'HP'
+        'ZenCode'
+        'JDA (SKD41 compatible)'
+      )
+      ParentFont = False
+      TabOrder = 9
+    end
+    object ChkOneLine: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Prints a line for every ROM word'
+      Top = 161
+      Width = 196
+      Caption = 'One disassembly line per word'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 7
+    end
+    object ChkSDK41Mode: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Generates disassembly for SDK41 re-assembly'
+      Top = 326
+      Width = 196
+      Caption = 'SDK41 compatible disassembly'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 10
+    end
+    object Edit12: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 21
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 11
+    end
+    object Edit13: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 46
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 12
+    end
+    object Edit14: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 71
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 13
+    end
+    object Edit15: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 96
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 14
+    end
+    object Edit16: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 121
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 15
+    end
+    object Edit17: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 146
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 16
+    end
+    object Edit18: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 171
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 17
+    end
+    object Edit19: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 196
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 18
+    end
+    object Edit20: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 221
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 19
+    end
+    object Edit21: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 246
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 20
+    end
+    object Edit22: TEdit
+      Left = 413
+      Height = 21
+      Hint = 'Position on disassembly line'
+      Top = 271
+      Width = 38
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 21
+    end
+    object BtnOK: TButton
+      Left = 424
+      Height = 25
+      Hint = 'Apply changes and close Preferences Dialog'
+      Top = 336
+      Width = 75
+      Caption = 'OK'
+      OnClick = BtnOKClick
+      TabOrder = 24
+    end
+    object BtnCancel: TButton
+      Left = 248
+      Height = 25
+      Hint = 'Cancel without saving changes'
+      Top = 336
+      Width = 75
+      Caption = 'Cancel'
+      OnClick = BtnCancelClick
+      TabOrder = 22
+    end
+    object BtnApply: TButton
+      Left = 336
+      Height = 25
+      Hint = 'Apply Changes'
+      Top = 336
+      Width = 75
+      Caption = 'Apply'
+      OnClick = BtnApplyClick
+      TabOrder = 23
+    end
+    object ChkXRef: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Generates a cross reference table'
+      Top = 181
+      Width = 196
+      Caption = 'Generate label cross reference'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 8
+    end
+    object ChkAutoFixed: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Generates labels for XROM, entry points etc'
+      Top = 41
+      Width = 177
+      Caption = 'Auto Label Fixed Addresses'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 25
+    end
+    object ChkCleanList: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Generate ''clean'' listing without addresses or hex codes'
+      Top = 201
+      Width = 216
+      Caption = 'Do not print Address and HexCode'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 26
+    end
+    object ChkMESLArg: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'MESL string and MSG argumnet on next line, else on same line'
+      Top = 141
+      Width = 180
+      Caption = 'MESL argument on next line'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 6
+    end
+    object ChkLabLst: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Use Label as Arg1, else address'
+      Top = 121
+      Width = 181
+      Caption = 'Arg1 = Label (else Address)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object ChkSkipNOPS: TCheckBox
+      Left = 18
+      Height = 20
+      Hint = 'Skip multiple NOPS'
+      Top = 101
+      Width = 127
+      Caption = 'Skip multiple NOPs'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 0
+    Height = 193
+    Top = 0
+    Width = 519
+    Align = alTop
+    Caption = 'MLDL2000 Communication'
+    ClientHeight = 175
+    ClientWidth = 515
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 16
+      Height = 17
+      Hint = '0=high speed (6 MHz); 65535=slowest'
+      Top = 12
+      Width = 78
+      Caption = 'Comm Speed'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 17
+      Hint = 'FLASH Byte Program Time Out (default 1 sec)'
+      Top = 108
+      Width = 112
+      Caption = 'Flash Prog Timeout'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 17
+      Hint = 'USB Communication Time Out (default 1 sec)'
+      Top = 84
+      Width = 75
+      Caption = 'USB Timeout'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 17
+      Hint = '0=high speed (6 MHz); 65535=slowest'
+      Top = 60
+      Width = 70
+      Caption = 'JTAG Speed'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 17
+      Hint = 'FLASH Sector Erase Time Out (default 5 sec)'
+      Top = 132
+      Width = 125
+      Caption = 'Sector Erase Timeout'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 16
+      Height = 17
+      Hint = 'FLASH Erase ALL Time Out (default 5 sec)'
+      Top = 155
+      Width = 102
+      Caption = 'Erase All Timeout'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 16
+      Height = 17
+      Hint = 'Communication Block Size (must be power of 2)'
+      Top = 36
+      Width = 99
+      Caption = 'Comm Block Size'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object LblMPSSE: TLabel
+      Left = 236
+      Height = 17
+      Top = 12
+      Width = 53
+      Caption = '0000 bps'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object LblJTAG: TLabel
+      Left = 236
+      Height = 17
+      Top = 60
+      Width = 53
+      Caption = '0000 bps'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 236
+      Height = 17
+      Top = 108
+      Width = 80
+      Caption = '(milliseconds)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 236
+      Height = 17
+      Top = 84
+      Width = 80
+      Caption = '(milliseconds)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 236
+      Height = 17
+      Top = 132
+      Width = 80
+      Caption = '(milliseconds)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 236
+      Height = 17
+      Top = 155
+      Width = 80
+      Caption = '(milliseconds)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 236
+      Height = 17
+      Top = 36
+      Width = 41
+      Caption = '(bytes)'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+    end
+    object EdtCommSpeed: TEdit
+      Left = 143
+      Height = 21
+      Hint = '0=high speed (6 MHz); 65535=slowest'
+      Top = 8
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtCommSpeedChange
+      ParentFont = False
+      TabOrder = 0
+    end
+    object EdtJTAGSpeed: TEdit
+      Left = 143
+      Height = 21
+      Hint = '0=high speed (6 MHz); 65535=slowest'
+      Top = 57
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      MaxLength = 5
+      OnChange = EdtJTAGSpeedChange
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object EdtUSBTO: TEdit
+      Left = 142
+      Height = 21
+      Hint = 'USB Communication Time Out (default 1 sec)'
+      Top = 81
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object EdtFLASHTO: TEdit
+      Left = 142
+      Height = 21
+      Hint = 'FLASH Byte Program Time Out (default 1 sec)'
+      Top = 104
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 4
+    end
+    object EdtSecTO: TEdit
+      Left = 142
+      Height = 21
+      Hint = 'FLASH Sector Erase Time Out (default 5 sec)'
+      Top = 128
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object EdtALLTO: TEdit
+      Left = 142
+      Height = 21
+      Hint = 'FLASH Erase ALL Time Out (default 5 sec)'
+      Top = 151
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 6
+    end
+    object ChkAutoVerify: TCheckBox
+      Left = 326
+      Height = 20
+      Hint = 'Enable Automatic Verify after dowload'
+      Top = 9
+      Width = 83
+      Caption = 'Auto Verify'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 7
+    end
+    object ChkConfDown: TCheckBox
+      Left = 326
+      Height = 20
+      Hint = 'Enable Confirm on Download'
+      Top = 33
+      Width = 125
+      Caption = 'Confirm Download'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 8
+    end
+    object CmbBlockSize: TComboBox
+      Left = 143
+      Height = 21
+      Hint = 'Communication Block Size (must be power of 2)'
+      Top = 32
+      Width = 89
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      ItemHeight = 13
+      Items.Strings = (
+        '16 bytes'
+        '32 bytes'
+        '64 bytes'
+        '128 bytes'
+        '256 bytes'
+        '512 bytes'
+        '1024 bytes'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object ChkAutoFind: TCheckBox
+      Left = 326
+      Height = 20
+      Hint = 'Enable Automatic Find of free ROM space'
+      Top = 57
+      Width = 132
+      Caption = 'Auto Find free ROM'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 9
+    end
+    object ChkSRAMDefault: TCheckBox
+      Left = 326
+      Height = 20
+      Hint = 'when checked, SRAM is defautl memory type, else FLASH'
+      Top = 81
+      Width = 179
+      Caption = 'SRAM default Memory Type'
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentFont = False
+      TabOrder = 10
+    end
+  end
+end

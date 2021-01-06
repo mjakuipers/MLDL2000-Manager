@@ -1,0 +1,366 @@
+object Frm_JTAG: TFrm_JTAG
+  Left = 1222
+  Height = 580
+  Top = 126
+  Width = 550
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'JTAG Mode'
+  ClientHeight = 580
+  ClientWidth = 550
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = [fsBold]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 7
+    Height = 13
+    Top = 32
+    Width = 492
+    Caption = 'FIRMWARE PROGRAMMING IS A CRITICAL OPERATION. PLEASE DO ONLY WHEN REQUIRED'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 7
+    Height = 13
+    Top = 47
+    Width = 419
+    Caption = 'DO NOT USE ANY OF THE DEBBUGING FEATURES. WHEN IN DOUBT PLEASE ASK'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 7
+    Height = 13
+    Top = 62
+    Width = 518
+    Caption = 'HAVE YOUR HP41 CONNECTED AND POWERED. DO NOT USE YOUR HP41 DURING PROGRAMMING'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 7
+    Height = 13
+    Top = 77
+    Width = 435
+    Caption = 'DO NOT DISCONNECT THE USB CABLE AND ONLY USE TRUSTED FIRMWARE FILES '
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 223
+    Height = 32
+    Top = 0
+    Width = 145
+    Caption = 'WARNING!'
+    Font.Height = -27
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object MemoJTAG: TMemo
+    Left = 0
+    Height = 293
+    Top = 262
+    Width = 550
+    Align = alBottom
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Lines.Strings = (
+      'Firmware Programming is a critical operation, please do only when required'
+      'Do not use any of the debugging features, when in doubt please ask'
+      'USE OF THE DEBUG FUNCTIONS IS AT YOUR OWN RISK'
+      ''
+      'When programming new firmware, have you HP41 connected and powered'
+      'Do no use your HP41 during firmware programming'
+      'Do not disconnect the USB cable and only use trusted firmware files'
+      ''
+      'Instructions for use:'
+      '*  Check the Device ID, this must be $0495B093'
+      '*  Check the current Firmware Version (Device ID is shown as well)'
+      '*  If no errors occur, firmware may be upgraded'
+      '*  Click OPEN to choose the firmware file, must have the *.XSVF  extension'
+      '*  Click PROGRAM to do the actual programming'
+      '*  During Firmware programming, the contents of the first block of SRAM '
+      '   may be corrupted. It is advised to make a backup before firmware '
+      '   programming.'
+      '*  After firmware programming, Connect and Disconnect the MLDL2000 from '
+      '   your PC and check the firmware version. '
+      '*  Verify the operation of the MLDL2000/HP41'
+      '*  make certain that you understand the features and changes in the new firmware'
+    )
+    ParentFont = False
+    TabOrder = 8
+  end
+  object GroupBox1: TGroupBox
+    Left = 145
+    Height = 122
+    Top = 100
+    Width = 394
+    Caption = 'Debug Functions - use of these functions at your own risk!'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 14
+  end
+  object BtnEnable: TButton
+    Left = 157
+    Height = 25
+    Top = 180
+    Width = 89
+    Caption = 'Enable JTAG'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnEnableClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BtnOpen: TButton
+    Left = 7
+    Height = 25
+    Hint = 'Open Firmware file (*.XSVF)'
+    Top = 100
+    Width = 89
+    Caption = 'Open'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnOpenClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+  end
+  object BtnProgram: TButton
+    Left = 7
+    Height = 25
+    Hint = 'Program Open Firmware file'
+    Top = 190
+    Width = 89
+    Caption = 'Program'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnProgramClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+  object PnlBottom: TPanel
+    Left = 0
+    Height = 25
+    Top = 555
+    Width = 550
+    Align = alBottom
+    Caption = 'PnlBottom'
+    ClientHeight = 25
+    ClientWidth = 550
+    TabOrder = 3
+    object PnlStatus: TPanel
+      Left = 1
+      Height = 23
+      Top = 1
+      Width = 232
+      Align = alLeft
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object ProgressJTAG: TProgressBar
+      Left = 308
+      Height = 23
+      Top = 1
+      Width = 241
+      Align = alRight
+      Smooth = True
+      Step = 1
+      TabOrder = 1
+    end
+    object PnlError: TPanel
+      Left = 233
+      Height = 23
+      Top = 1
+      Width = 75
+      Align = alClient
+      BevelInner = bvLowered
+      BevelOuter = bvNone
+      TabOrder = 2
+    end
+  end
+  object ChkSimulate: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 120
+    Width = 197
+    Caption = 'Simulate only, no programming'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+  end
+  object ChkLog: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 180
+    Width = 103
+    Caption = 'Create Log File'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+  end
+  object ChkUSBProg: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 200
+    Width = 236
+    Caption = 'USB Programming (else parallel cable)'
+    Checked = True
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    State = cbChecked
+    TabOrder = 6
+  end
+  object ChkDebug: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 160
+    Width = 120
+    Caption = 'Enable Step Mode'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 7
+  end
+  object BtnNext: TButton
+    Left = 157
+    Height = 25
+    Top = 150
+    Width = 89
+    Caption = 'Next'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+  end
+  object ChkTrace: TCheckBox
+    Left = 280
+    Height = 19
+    Top = 140
+    Width = 126
+    Caption = 'Enable Trace Mode'
+    Enabled = False
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+  end
+  object BtnDevID: TButton
+    Left = 7
+    Height = 25
+    Hint = 'Read CPLD Device ID'
+    Top = 130
+    Width = 89
+    Caption = 'Device ID'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnDevIDClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 11
+  end
+  object BtnFWID: TButton
+    Left = 7
+    Height = 25
+    Hint = 'Read current Firmware Version'
+    Top = 160
+    Width = 89
+    Caption = 'FW Version'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnFWIDClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 12
+  end
+  object BtnDbgEnable: TButton
+    Left = 157
+    Height = 25
+    Top = 120
+    Width = 89
+    Caption = 'Enable Debug'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnDbgEnableClick
+    ParentFont = False
+    TabOrder = 13
+  end
+  object BtnProgUES: TButton
+    Left = 7
+    Height = 25
+    Hint = 'Program UES Firmware version string'
+    Top = 230
+    Width = 89
+    Caption = 'Program UES'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnProgUESClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 15
+  end
+  object EdtUES: TEdit
+    Left = 110
+    Height = 21
+    Hint = 'Firware version string, maximum 60chars'
+    Top = 232
+    Width = 429
+    MaxLength = 60
+    TabOrder = 16
+  end
+  object DlgOpen: TOpenDialog
+    Filter = 'XSVF file|*.xsvf'
+    left = 556
+    top = 8
+  end
+end

@@ -1,0 +1,178 @@
+object Frm_IOHandler: TFrm_IOHandler
+  Left = 797
+  Height = 242
+  Top = 598
+  Width = 596
+  Caption = 'MLDL2000 I/O Handler'
+  ClientHeight = 242
+  ClientWidth = 596
+  Constraints.MaxWidth = 596
+  Constraints.MinHeight = 242
+  Constraints.MinWidth = 596
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = OnCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '0.9.28.2'
+  object XB: TLabel
+    Left = 5
+    Height = 14
+    Top = 151
+    Width = 36
+    Caption = 'X_BSY'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 3
+    Height = 14
+    Top = 170
+    Width = 38
+    Caption = 'X_DAV'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Lbl_XBSY: TLabel
+    Left = 46
+    Height = 14
+    Top = 151
+    Width = 25
+    Caption = 'Hi/Lo'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Lbl_XDAV: TLabel
+    Left = 46
+    Height = 14
+    Top = 170
+    Width = 25
+    Caption = 'Hi/Lo'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object LblDataRead: TLabel
+    Left = 90
+    Height = 17
+    Top = 58
+    Width = 37
+    Caption = '. . . . .'
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 5
+    Height = 20
+    Top = 193
+    Width = 150
+    Caption = '! EXPERIMENTAL !'
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BtnWrite: TButton
+    Left = 0
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Write'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnWriteClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BtnRead: TButton
+    Left = 1
+    Height = 25
+    Top = 55
+    Width = 75
+    Caption = 'Read'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnReadClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object BtnStop: TButton
+    Left = 1
+    Height = 25
+    Top = 117
+    Width = 75
+    Caption = 'Stop Read'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnStopClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object BtnContRead: TButton
+    Left = 1
+    Height = 25
+    Top = 86
+    Width = 75
+    Caption = 'Cont Read'
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    OnClick = BtnContReadClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object MemData: TMemo
+    Left = 173
+    Height = 242
+    Top = 0
+    Width = 158
+    Align = alRight
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object EdtHex: TEdit
+    Left = 1
+    Height = 21
+    Top = 0
+    Width = 162
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentFont = False
+    TabOrder = 5
+  end
+  object MemAlpha: TMemo
+    Left = 331
+    Height = 242
+    Top = 0
+    Width = 265
+    Align = alRight
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ScrollBars = ssVertical
+    TabOrder = 6
+  end
+end

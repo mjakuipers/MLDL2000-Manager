@@ -1,0 +1,31 @@
+object FrmLister: TFrmLister
+  Left = 1277
+  Height = 545
+  Top = 149
+  Width = 609
+  Caption = 'MLDL2000 Lister'
+  ClientHeight = 545
+  ClientWidth = 609
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.6.0'
+  object EdtList: TMemo
+    Left = 0
+    Height = 545
+    Top = 0
+    Width = 609
+    Align = alClient
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      ''
+    )
+    OnKeyDown = EdtListKeyDown
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+    WordWrap = False
+  end
+end

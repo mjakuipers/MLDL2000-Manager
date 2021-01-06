@@ -1,0 +1,243 @@
+object Frm_Tester: TFrm_Tester
+  Left = 476
+  Height = 426
+  Top = 437
+  Width = 566
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'MLDL2000 Tester'
+  ClientHeight = 426
+  ClientWidth = 566
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '0.9.28.2'
+  object BtnSRAM: TButton
+    Left = 8
+    Height = 25
+    Hint = 'Test SRAM Memory'
+    Top = 28
+    Width = 75
+    Caption = 'Test SRAM'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnSRAMClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BtnFLASH: TButton
+    Left = 8
+    Height = 25
+    Hint = 'Test FLASH Memory'
+    Top = 56
+    Width = 75
+    Caption = 'Test FLASH'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnFLASHClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object StaticText1: TStaticText
+    Left = 4
+    Height = 20
+    Top = 120
+    Width = 228
+    Caption = 'Sit back, relax and enjoy the test'
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 253
+    Top = 173
+    Width = 566
+    Align = alBottom
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+  object RadType: TRadioGroup
+    Left = 376
+    Height = 73
+    Top = 24
+    Width = 185
+    AutoFill = True
+    Caption = 'Test (only Random implemented)'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 55
+    ClientWidth = 181
+    Columns = 2
+    Enabled = False
+    Items.Strings = (
+      'Fill $0000'
+      'Fill $FFFF'
+      'Fill $5555'
+      'Fill $AAAA'
+      'Random'
+      'All Tests'
+    )
+    TabOrder = 4
+  end
+  object RadTest: TRadioGroup
+    Left = 264
+    Height = 73
+    Top = 24
+    Width = 105
+    AutoFill = True
+    Caption = 'Memory Test'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 55
+    ClientWidth = 101
+    ItemIndex = 2
+    Items.Strings = (
+      'Fill Only'
+      'Test Only'
+      'Fill and Test'
+    )
+    TabOrder = 5
+  end
+  object StaticText2: TStaticText
+    Left = 8
+    Height = 20
+    Top = 4
+    Width = 362
+    Caption = 'ALL MEMORY WILL BE ERASED WITH FILL TESTS!'
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 6
+  end
+  object ChkDoubleMem: TCheckBox
+    Left = 8
+    Height = 17
+    Hint = 'Check for 2* SRAM testing'
+    Top = 84
+    Width = 88
+    Caption = '2* SRAM Test'
+    TabOrder = 7
+  end
+  object BtnTestAll: TButton
+    Left = 180
+    Height = 25
+    Hint = 'Test SRAM and FLASH'
+    Top = 28
+    Width = 75
+    Caption = 'Test ALL'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnTestAllClick
+    ParentFont = False
+    TabOrder = 8
+  end
+  object ChkDetail: TCheckBox
+    Left = 8
+    Height = 17
+    Hint = 'Check for listing of all faults'
+    Top = 100
+    Width = 97
+    Caption = 'Detailed Results'
+    TabOrder = 9
+  end
+  object BTNQuickSRAM: TButton
+    Left = 88
+    Height = 25
+    Hint = 'Test SRAM Page $0 and $1'
+    Top = 28
+    Width = 85
+    Caption = 'Quick SRAM'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BTNQuickSRAMClick
+    ParentFont = False
+    TabOrder = 10
+  end
+  object BtnQuickALL: TButton
+    Left = 180
+    Height = 25
+    Hint = 'Test SRAM and FLASH Page $0 and $1'
+    Top = 56
+    Width = 75
+    Caption = 'Quick ALL'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnQuickALLClick
+    ParentFont = False
+    TabOrder = 11
+  end
+  object BtnQuickFLASH: TButton
+    Left = 88
+    Height = 25
+    Hint = 'Erase and Test FLASH Page $0 and $1'
+    Top = 56
+    Width = 85
+    Caption = 'Quick FLASH'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnQuickFLASHClick
+    ParentFont = False
+    TabOrder = 12
+  end
+  object BtnSTOP: TButton
+    Left = 180
+    Height = 25
+    Hint = 'Interrupt test'
+    Top = 84
+    Width = 75
+    Caption = 'STOP'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnSTOPClick
+    ParentFont = False
+    TabOrder = 13
+  end
+  object BtnProduction: TButton
+    Left = 264
+    Height = 25
+    Hint = 'Shipping configuration and test for MLDL2000'
+    Top = 108
+    Width = 109
+    Caption = 'Shipping Config'
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnProductionClick
+    ParentFont = False
+    TabOrder = 14
+  end
+  object ChkSRAMOnly: TCheckBox
+    Left = 384
+    Height = 17
+    Top = 112
+    Width = 73
+    Caption = 'SRAM only'
+    TabOrder = 15
+  end
+end

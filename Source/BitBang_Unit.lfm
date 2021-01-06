@@ -1,0 +1,738 @@
+object BitBang: TBitBang
+  Left = 533
+  Height = 545
+  Hint = 'Initialize USB Interface'
+  Top = 217
+  Width = 348
+  ActiveControl = BtnWriteB
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'BitBang'
+  ClientHeight = 545
+  ClientWidth = 348
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '0.9.28.2'
+  object Label14: TLabel
+    Left = 16
+    Height = 25
+    Top = 8
+    Width = 314
+    Caption = 'BitBang is for test and debug only'
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 48
+    Height = 25
+    Top = 54
+    Width = 217
+    Caption = 'Use is at your own risk!'
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Pnl_MLDLStatus: TPanel
+    Left = 174
+    Height = 124
+    Top = 94
+    Width = 166
+    BevelInner = bvLowered
+    ClientHeight = 124
+    ClientWidth = 166
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 21
+      Height = 16
+      Top = 9
+      Width = 119
+      Alignment = taCenter
+      Caption = 'MLDL2000 Status'
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object BtnInitMLDL: TButton
+      Left = 29
+      Height = 25
+      Hint = 'Initialize MLDL2000 USB Interface'
+      Top = 47
+      Width = 113
+      Caption = 'Init MLDL2000'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      OnClick = BtnInitMLDLClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object PnlStatusMLDL: TPanel
+      Left = 8
+      Height = 25
+      Hint = 'Click for detailed error messages'
+      Top = 86
+      Width = 73
+      BevelInner = bvLowered
+      Caption = 'STATUS'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 20
+    Top = 525
+    Width = 348
+    Panels = <>
+  end
+  object Panel_OutputControl: TPanel
+    Left = 7
+    Height = 426
+    Top = 94
+    Width = 161
+    BevelInner = bvLowered
+    ClientHeight = 426
+    ClientWidth = 161
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 8
+      Height = 17
+      Top = 24
+      Width = 75
+      Alignment = taCenter
+      Caption = 'I/O Control'
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 14
+      Top = 46
+      Width = 69
+      Caption = 'Toggle Output'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 104
+      Height = 14
+      Top = 46
+      Width = 26
+      Caption = 'State'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 52
+      Height = 14
+      Hint = 'Port D6'
+      Top = 241
+      Width = 47
+      Caption = '/X_BSY'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 51
+      Height = 14
+      Hint = 'Port D5'
+      Top = 219
+      Width = 48
+      Caption = '/X_DAV'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 41
+      Height = 14
+      Hint = 'Port D7'
+      Top = 94
+      Width = 58
+      Caption = '/X_DOUT'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 28
+      Height = 14
+      Hint = 'Port D6'
+      Top = 264
+      Width = 71
+      Caption = '/X_SPARE0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 28
+      Height = 14
+      Hint = 'Port D6'
+      Top = 285
+      Width = 71
+      Caption = '/X_SPARE1'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 28
+      Height = 14
+      Hint = 'Port D6'
+      Top = 309
+      Width = 71
+      Caption = '/X_SPARE2'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object BtnX_CLK: TButton
+      Left = 9
+      Height = 25
+      Hint = 'Toggle D1'
+      Top = 63
+      Width = 89
+      Caption = '/X_CLK'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnX_CLKClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object BtnX_DIN: TButton
+      Left = 9
+      Height = 25
+      Hint = 'Toggle D2'
+      Top = 113
+      Width = 89
+      Caption = 'X_DIN'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnX_DINClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object BtnX_STROBE: TButton
+      Left = 9
+      Height = 25
+      Hint = 'Toggle D3'
+      Top = 138
+      Width = 89
+      Caption = '/X_STROBE'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnX_STROBEClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object PnlX_CLK: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D1'
+      Top = 65
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+    end
+    object BtnContOut: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Toggle All Ports Continuous'
+      Top = 360
+      Width = 129
+      Caption = 'CONT Toggle'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnContOutClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+    end
+    object BtnX_EN: TButton
+      Left = 9
+      Height = 25
+      Hint = 'Toggle D0'
+      Top = 163
+      Width = 89
+      Caption = '/X_EN'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnX_ENClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object BtnX_PE: TButton
+      Left = 9
+      Height = 25
+      Hint = 'Toggle D4'
+      Top = 188
+      Width = 89
+      Caption = '/X_PE'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnX_PEClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+    end
+    object PnlX_DOUT: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D7'
+      Top = 86
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 13
+    end
+    object PnlX_DIN: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D2'
+      Top = 113
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 6
+    end
+    object PnlX_STROBE: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D3'
+      Top = 138
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+    end
+    object PnlX_EN: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D0'
+      Top = 162
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+    end
+    object PnlX_PE: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D4'
+      Top = 186
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 10
+    end
+    object PnlX_DAV: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D5'
+      Top = 210
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 12
+    end
+    object PnlX_BSY: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D6'
+      Top = 234
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 11
+    end
+    object BtnRefresh: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Read input status'
+      Top = 392
+      Width = 65
+      Caption = 'REFRESH'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnRefreshClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 14
+    end
+    object BtnContIn: TButton
+      Left = 88
+      Height = 25
+      Hint = 'Read input status'
+      Top = 392
+      Width = 49
+      Caption = 'CONT'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnContInClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 15
+    end
+    object PnlX_SPARE0: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D0'
+      Top = 258
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 16
+    end
+    object PnlX_SPARE1: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D4'
+      Top = 282
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 17
+    end
+    object PnlX_SPARE2: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D5'
+      Top = 304
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 18
+    end
+    object PnlX_SPARE3: TPanel
+      Left = 104
+      Height = 25
+      Hint = 'D6'
+      Top = 328
+      Width = 33
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 19
+    end
+    object Btn_CPLD: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Toggle D4'
+      Top = 328
+      Width = 89
+      Caption = 'PWR CPLD'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = Btn_CPLDClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 20
+    end
+  end
+  object Pnl_PortB: TPanel
+    Left = 174
+    Height = 296
+    Top = 224
+    Width = 166
+    BevelInner = bvLowered
+    ClientHeight = 296
+    ClientWidth = 166
+    TabOrder = 3
+    object Label11: TLabel
+      Left = 2
+      Height = 16
+      Top = 2
+      Width = 162
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Port Control'
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 13
+      Height = 13
+      Top = 86
+      Width = 17
+      Caption = 'hex'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 67
+      Height = 13
+      Top = 86
+      Width = 14
+      Caption = 'bin'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+    end
+    object PnlStatusHEXPortB: TPanel
+      Left = 8
+      Height = 25
+      Top = 55
+      Width = 41
+      BevelInner = bvLowered
+      Caption = '0'
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+    end
+    object PnlStatusBINPortB: TPanel
+      Left = 64
+      Height = 25
+      Top = 55
+      Width = 97
+      BevelInner = bvLowered
+      Caption = '00000000'
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+    end
+    object BtnReadB: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Read Data'
+      Top = 24
+      Width = 89
+      Caption = 'Read 1 Byte'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnReadBClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object BtnWriteB: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Write 1 Byte'
+      Top = 138
+      Width = 97
+      Caption = 'Write Byte'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnWriteBClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object EdtOutput: TEdit
+      Left = 8
+      Height = 24
+      Top = 105
+      Width = 153
+      BidiMode = bdRightToLeft
+      CharCase = ecUppercase
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 16
+      ParentBidiMode = False
+      OnKeyUp = EdtOutputKeyUp
+      ParentFont = False
+      TabOrder = 4
+    end
+    object BtnTestWrite: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Test Write Sequence'
+      Top = 200
+      Width = 97
+      Caption = 'Test Write'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnTestWriteClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+    end
+    object BtnContCount: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Continuous Output Count'
+      Top = 231
+      Width = 97
+      Caption = 'Cont Count'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnContCountClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+    end
+    object BtnContRead: TButton
+      Left = 8
+      Height = 25
+      Hint = 'Continuous Read Port one Byte at a time'
+      Top = 262
+      Width = 97
+      Caption = 'Cont Read'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnContReadClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+    end
+    object BtnJTAGEnabled: TButton
+      Left = 8
+      Height = 25
+      Top = 169
+      Width = 97
+      Caption = 'JTAG Enable'
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      OnClick = BtnJTAGEnabledClick
+      ParentFont = False
+      TabOrder = 8
+    end
+  end
+  object PnlAccessCount: TPanel
+    Left = 270
+    Height = 25
+    Top = 180
+    Width = 49
+    BevelInner = bvLowered
+    Caption = '0'
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+  end
+  object TmrIO: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = TmrIOTimer
+    left = 312
+    top = 112
+  end
+end
