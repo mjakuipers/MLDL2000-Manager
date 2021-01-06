@@ -1,0 +1,496 @@
+//---------------------------------------------------------------------------//
+//    Copyright (c) 2008  Meindert Kuipers, Netherlands                      //
+//    meindert@kuiprs.nl                 www.kuiprs.nl                       //
+//                                                                           //
+// This program is free software; you can redistribute it and/or             //
+// modify it under the terms of the GNU General Public License               //
+// as published by the Free Software Foundation; either version 2            //
+// of the License, or (at your option) any later version.                    //
+//                                                                           //
+// This program is distributed in the hope that it will be useful,           //
+// but WITHOUT ANY WARRANTY; without even the implied warranty of            //
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             //
+// GNU General Public License for more details.                              //
+//                                                                           //
+// You should have received a copy of the GNU General Public License         //
+// along with this program; if not, write to the Free Software               //
+// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA//
+//---------------------------------------------------------------------------//
+//
+//---------------------------------------------------------------------------//
+//  XROM.TXT                                                                 //
+//  Table of XROM for M2kM User Code Disassembler                            //
+//  Ver  Date     Description                                                //
+//  1.20 Feb 2008 First version                                              //
+//  1.50 May 2008 Final release                                              //
+//---------------------------------------------------------------------------//
+
+
+// File format:
+// XROM 25,01 [FUNCTION] comment 
+
+// File must be in same directory as executable
+
+// All lines not starting with  XROM  are ignored and treated as comments
+// Single or double quotes can be used. lines may be empty
+// Spaces are treated as delimiters, use quotes when there are spaces in the name
+// otherwise the quotes may be ignored
+
+// XROM numbers must be 2 digits!
+
+// Anything after the function name is printed as coment in the disassembly listing
+
+// A label starting with : will be treated as the title of the XROM and will be used 
+// as comment for functions that do not have their own comment. Do not use quotes here
+// This type of label may be repeated and will be used for XROM's after it
+// for example for group headings
+
+// the table is scanned sequentially
+
+
+// Extended Functions, XROM 25
+XROM 25,00	  :Extended Functions ROM
+XROM 25,00	  "-EXT FCN 1C"
+XROM 25,01    "ALENG"			XFUN: Returns numbers of chars in ALPHA
+XROM 25,02    ANUM                                 
+XROM 25,03    APPCHR                               
+XROM 25,04    APPREC                               
+XROM 25,05    ARCLREC                              
+XROM 25,06    AROT                                 
+XROM 25,07    ATOX                                 
+XROM 25,08    CLFL                                 
+XROM 25,09    CLKEYS                               
+XROM 25,10    CRFLAS                               
+XROM 25,11    CRFLD                                
+XROM 25,12    DELCHR                               
+XROM 25,13    DELREC                               
+XROM 25,14    EMDIR                                
+XROM 25,15    FLSIZE                               
+XROM 25,16    GETAS                                
+XROM 25,17    GETKEY                               
+XROM 25,18    GETP                                 
+XROM 25,19    GETR                                 
+XROM 25,20    GETREC                               
+XROM 25,21    GETRX                                
+XROM 25,22    GETSUB                               
+XROM 25,23    GETX                                 
+XROM 25,24    INSCHR                               
+XROM 25,25    INSREC                               
+XROM 25,26    PASN                                 
+XROM 25,27    PCLPS                                
+XROM 25,28    POSA                                 
+XROM 25,29    POSFL                                
+XROM 25,30    PSIZE                                
+XROM 25,31    PURFL                                
+XROM 25,32    RCLFLAG                              
+XROM 25,33    RCLPT                                
+XROM 25,34    RCLPTA                               
+XROM 25,35    REGMOVE                              
+XROM 25,36    REGSWAP                              
+XROM 25,37    SAVEAS                               
+XROM 25,38    SAVEP                                
+XROM 25,39    SAVER                                
+XROM 25,40    SAVERX                               
+XROM 25,41    SAVEX                                
+XROM 25,42    SEEKPT                               
+XROM 25,43    SEEKPTA                              
+XROM 25,44    SIZE?                                
+XROM 25,45    STOFLAG                              
+XROM 25,46    X<>F                                 
+XROM 25,47    XTOA                                 
+//
+// -CX EXT FCN
+//	 
+XROM 25,00		:CX Extended Functions ROM
+XROM 25,00 	  '-CX EXT FCN'
+XROM 25,49    ASROOM                               
+XROM 25,50    CLRGX                                
+XROM 25,51    ED                                   
+XROM 25,52    EMDIRX                               
+XROM 25,53    EMROOM                               
+XROM 25,54    GETKEYX                              
+XROM 25,55    RESZFL                               
+XROM 25,56    SREG?                                
+XROM 25,57    X=NN?                                
+XROM 25,58    X#NN?                                
+XROM 25,59    X<NN?                                
+XROM 25,60    X<=NN?                               
+XROM 25,61    X>NN?                                
+XROM 25,62    X>=NN?                               
+//
+// -TIME 2C
+//
+XROM 26,00		:TIME Module
+XROM 26,00    '-TIME 2C' 			       
+XROM 26,01    ADATE                                
+XROM 26,02    ALMCAT                               
+XROM 26,03    ALMNOW                               
+XROM 26,04    ATIME                                
+XROM 26,05    ATIME24                              
+XROM 26,06    CLK12                                
+XROM 26,07    CLK24                                
+XROM 26,08    CLKT                                 
+XROM 26,09    CLKTD                                
+XROM 26,10    CLOCK                                
+XROM 26,11    CORRECT                              
+XROM 26,12    DATE                                 
+XROM 26,13    DATE+                                
+XROM 26,14    DDAYS                                
+XROM 26,15    DMY                                  
+XROM 26,16    DOW                                  
+XROM 26,17    MDY                                  
+XROM 26,18    RCLAF                                
+XROM 26,19    RCLSW                                
+XROM 26,20    RUNSW                                
+XROM 26,21    SETAF                                
+XROM 26,22    SETDATE                              
+XROM 26,23    SETIME                               
+XROM 26,24    SETSW                                
+XROM 26,25    STOPSW                               
+XROM 26,26    SW                                   
+XROM 26,27    T+X                                  
+XROM 26,28    TIME                                 
+XROM 26,29    XYZALM                               
+//
+// -CX TIME
+//
+XROM 26,00    :-CX TIME 			       
+XROM 26,31    CLALMA                               
+XROM 26,32    CLALMX                               
+XROM 26,33    CLRALMS                              
+XROM 26,34    RCLALM                               
+XROM 26,35    SWPT                                 
+//
+// -PRINTER 2E
+//
+XROM 29,00	  :PRINTER 2E
+XROM 29,00    '-PRINTER 2E' 
+XROM 29,01    ACA                                  
+XROM 29,02    ACCHR                                
+XROM 29,03    ACCOL                                
+XROM 29,04    ACSPEC                               
+XROM 29,05    ACX                                  
+XROM 29,06    BLDSPEC                              
+XROM 29,08    PRA                                  
+XROM 29,09    PRAXIS                               
+XROM 29,10    PRBUF                                
+XROM 29,11    PRFLAGS                              
+XROM 29,12    PRKEYS                               
+XROM 29,14    PRPLOT                               
+XROM 29,15    PRPLOTP                              
+XROM 29,16    PRREG                                
+XROM 29,17    PRREGX                               
+XROM 29,18    PRS                                  
+XROM 29,19    PRSTK                                
+XROM 29,20    PRX                                  
+XROM 29,21    REGPLOT                              
+XROM 29,22    SKPCHR                               
+XROM 29,23    SKPCOL                               
+XROM 29,24    STKPLOT                              
+XROM 29,25    FMT                                  
+//
+// -MASS ST 1H
+//
+XROM 28,00	  :-MASS ST 1H
+XROM 28,00    '-MASS ST 1H' 
+XROM 28,01    CREATE                               
+XROM 28,02    DIR                                  
+XROM 28,04    PURGE                                
+XROM 28,05    READA                                
+XROM 28,06    READK                                
+XROM 28,07    READP                                
+XROM 28,08    READR                                
+XROM 28,09    READRX                               
+XROM 28,10    READS                                
+XROM 28,11    READSUB                              
+XROM 28,12    RENAME                               
+XROM 28,13    SEC                                  
+XROM 28,14    SEEKR                                
+XROM 28,15    UNSEC                                
+XROM 28,16    VERIFY                               
+XROM 28,17    WRTA                                 
+XROM 28,18    WRTK                                 
+XROM 28,19    WRTP                                 
+XROM 28,20    WRTPV                                
+XROM 28,21    WRTR                                 
+XROM 28,22    WRTRX                                
+XROM 28,23    WRTS                                 
+XROM 28,24    ZERO                                 
+//
+// -CTL FNS
+//
+XROM 28,00    :-CTL FNS
+XROM 28,00    '-CTL FNS' 
+XROM 28,27    AUTOIO                               
+XROM 28,28    FINDIO                               
+XROM 28,29    INA                                  
+XROM 28,30    IND                                  
+XROM 28,31    INSTAT                               
+XROM 28,32    LISTEN                               
+XROM 28,33    LOCAL                                
+XROM 28,34    MANIO                                
+XROM 28,35    OUTA                                 
+XROM 28,36    PWRDN                                
+XROM 28,37    PWRUP                                
+XROM 28,38    REMOTE                               
+XROM 28,39    SELECT                               
+XROM 28,40    STOPIO                               
+XROM 28,41    TRIGGER                              
+//
+// -X MASS 1A
+//
+XROM 23,00    :-X MASS 1A
+XROM 23,00    '-X MASS 1A' 
+XROM 23,01    COPYFL                               
+XROM 23,02    DIRX                                 
+XROM 23,03    FLLENG                               
+XROM 23,04    FLTYPE                               
+XROM 23,05    MCOPY                                
+XROM 23,06    MCOPYPV                              
+XROM 23,07    MVERIFY                              
+//
+// -X EXT FCN
+//
+XROM 23,00    :-X EXT FCN
+XROM 23,00    '-X EXT FCN' 
+XROM 23,09    ALENGIO                              
+XROM 23,10    ANUNDEL                              
+XROM 23,11    ATOXL                                
+XROM 23,12    ATOXR                                
+XROM 23,13    ATOXX                                
+XROM 23,14    XTOAL                                
+XROM 23,15    XTOAR                                
+XROM 23,16    X<>FIO                               
+XROM 23,17    YTOAX                                
+//
+// -X CTL FNS
+//
+XROM 23,00    :-X CTL FNS
+XROM 23,00    '-X CTL FNS' 
+XROM 23,19    AID                                  
+XROM 23,20    CLRDEV                               
+XROM 23,21    CLRLOOP                              
+XROM 23,22    DEVL                                 
+XROM 23,23    DEVT                                 
+XROM 23,24    FINDAID                              
+XROM 23,25    ID                                   
+XROM 23,26    INAC                                 
+XROM 23,27    INACL                                
+XROM 23,28    INAE                                 
+XROM 23,29    INAN                                 
+XROM 23,30    INXB                                 
+XROM 23,31    INP                                  
+XROM 23,32    LOCK                                 
+XROM 23,33    NLOOP                                
+XROM 23,34    NOTREM                               
+XROM 23,35    OUTAC                                
+XROM 23,36    OUTACL                               
+XROM 23,37    OUTAE                                
+XROM 23,38    OUTAN                                
+XROM 23,39    OUTXB                                
+XROM 23,40    OUTP                                 
+XROM 23,41    POLL                                 
+XROM 23,42    POLLD                                
+XROM 23,43    POLLE                                
+XROM 23,44    POLLUNC                              
+XROM 23,45    RCLSEL                               
+XROM 23,46    SRQ?                                 
+XROM 23,47    STAT                                 
+XROM 23,48    XFER                                 
+XROM 23,49    XFERC                                
+XROM 23,50    XREFCL                               
+XROM 23,51    XFERE                                
+XROM 23,52    XFERN                                
+//
+// -ADV CTL FN
+//        
+XROM 23,00    :-ADV CTL FN 
+XROM 23,00    '-ADV CTL FN' 
+XROM 23,54    ADROFF                               
+XROM 23,55    ADRON                                
+XROM 23,56    DDL                                  
+XROM 23,57    DDT                                  
+XROM 23,58    LAD                                  
+XROM 23,59    SEND                                 
+XROM 23,60    TAD                                  
+XROM 23,61    UNL                                  
+XROM 23,62    UNT                                  
+//
+// PLOTTER 1A-
+//
+XROM 17,00    :PLOTTER 1A-
+XROM 17,00    'PLOTTER 1A-' 
+XROM 17,01    CLIPUU                               
+XROM 17,02    CSIZE                                
+XROM 17,03    CSIZEO                               
+XROM 17,04    DGTIZE                               
+XROM 17,05    DRAW                                 
+XROM 17,06    FRAME                                
+XROM 17,07    GCLEAR                               
+XROM 17,08    IDRAW                                
+XROM 17,09    IMOVE                                
+XROM 17,10    IPLOT                                
+XROM 17,11    LABEL                                
+XROM 17,12    LDIR                                 
+XROM 17,13    LIMIT                                
+XROM 17,14    LOCATD                               
+XROM 17,15    LOCATE                               
+XROM 17,16    LORG                                 
+XROM 17,17    LTYPE                                
+XROM 17,18    LTYPEO                               
+XROM 17,19    LXAXIS                               
+XROM 17,20    LYAXIS                               
+XROM 17,21    MOVE                                 
+XROM 17,22    PEN                                  
+XROM 17,23    PENDN                                
+XROM 17,24    PENUP                                
+XROM 17,25    PINIT                                
+XROM 17,26    PLOT                                 
+XROM 17,27    PLREGX                               
+XROM 17,28    RATIO                                
+XROM 17,29    RPLOT                                
+XROM 17,30    SCALE                                
+XROM 17,31    SETGU                                
+XROM 17,32    SETUU                                
+XROM 17,33    TICLEN                               
+XROM 17,34    UNCLIP                               
+XROM 17,35    WHERE                                
+XROM 17,36    XAXIS                                
+XROM 17,37    XAXISO                               
+XROM 17,38    YAXIS                                
+XROM 17,39    YAXISO                               
+//
+// PLOTTER 2A-
+//
+XROM 18,00    :PLOTTER 2A-
+XROM 18,00    'PLOTTER 2A-' 
+XROM 18,01    PCLBUF                               
+XROM 18,02    PDIR                                 
+XROM 18,03    PRCL                                 
+XROM 18,04    NEWPLOT                              
+XROM 18,05    REPLOT                               
+XROM 18,06    PLINIT                               
+XROM 18,07    PLTUXY                               
+XROM 18,08    PLANOT                               
+XROM 18,09    Y?                                   
+XROM 18,10    X?                                   
+XROM 18,11    BC                                   
+XROM 18,12    BCA                                  
+XROM 18,13    BCAA                                 
+XROM 18,14    BCCKSM                               
+XROM 18,15    BCO                                  
+XROM 18,16    BCP                                  
+XROM 18,17    BCREGX                               
+XROM 18,18    BCSIZE                               
+XROM 18,19    BCX                                  
+XROM 18,20    BCXS                                 
+//
+// -HP-IL DEV
+//
+XROM 22,00    :-HP-IL DEV
+XROM 22,00    '-HP-IL DEV' 
+XROM 22,01    A-BUF                                
+XROM 22,02    A=BUF?                               
+XROM 22,03    A=BUFX?                              
+XROM 22,04    AAD                                  
+XROM 22,05    AAU                                  
+XROM 22,06    AIPT                                 
+XROM 22,07    BSIZE?                               
+XROM 22,08    BSIZEX                               
+XROM 22,09    BUF-AX                               
+XROM 22,10    BUF-RGX                              
+XROM 22,11    BUF-XA                               
+XROM 22,12    BUF-XB                               
+XROM 22,13    CF33                                 
+XROM 22,14    CMD                                  
+XROM 22,15    DDL                                  
+XROM 22,16    DDT                                  
+XROM 22,17    FRAV?                                
+XROM 22,18    FRNS?                                
+XROM 22,19    GET                                  
+XROM 22,20    GTL                                  
+XROM 22,21    IDY                                  
+XROM 22,22    IFCR?                                
+XROM 22,23    IFC                                  
+XROM 22,24    INBIN                                
+XROM 22,25    INBUFX                               
+XROM 22,26    LAD                                  
+XROM 22,27    LPD                                  
+XROM 22,28    MIPT                                 
+XROM 22,29    MONITOR                              
+XROM 22,30    NRD                                  
+XROM 22,31    NRE                                  
+XROM 22,32    ORAV?                                
+XROM 22,33    OUTBIN                               
+XROM 22,34    OUTBINY                              
+XROM 22,35    OUTBUFX                              
+XROM 22,36    PT=                                  
+XROM 22,37    PT?                                  
+XROM 22,38    PRBYTES                              
+XROM 22,39    PRFRMS                               
+XROM 22,40    REN                                  
+XROM 22,41    RFRM                                 
+XROM 22,42    RG-BUFX                              
+XROM 22,43    RG=BUF?                              
+XROM 22,44    RREG                                 
+XROM 22,45    SAI                                  
+XROM 22,46    SCOPE                                
+XROM 22,47    SDA                                  
+XROM 22,48    SDC                                  
+XROM 22,49    SDI                                  
+XROM 22,50    SF33                                 
+XROM 22,51    SRQR?                                
+XROM 22,52    SST                                  
+XROM 22,53    TAD                                  
+XROM 22,54    TCT                                  
+XROM 22,55    UNL                                  
+XROM 22,56    UNT                                  
+XROM 22,57    WFRM                                 
+XROM 22,58    WREG                                 
+XROM 22,59    X-BUF                                
+XROM 22,60    X=BUF?                               
+XROM 22,61    X<>FLAG 
+//
+XROM 24,00    :-HP-IL DEV'
+XROM 24,00    '-HP-IL DEV'
+XROM 24,01    AND                                  
+XROM 24,02    ASIZE?                               
+XROM 24,03    A-XL                                 
+XROM 24,04    A-XR                                 
+XROM 24,05    A-XX                                 
+XROM 24,06    BININ                                
+XROM 24,07    BINVIEW                              
+XROM 24,08    BIT?                                 
+XROM 24,09    HEXIN                                
+XROM 24,10    HEXVIEW                              
+XROM 24,11    NOT                                  
+XROM 24,12    OR                                   
+XROM 24,13    OCTIN                                
+XROM 24,14    OCTVIEW                              
+XROM 24,15    ROMCHKX                              
+XROM 24,16    ROTXY                                
+XROM 24,17    XOR                                  
+XROM 24,18    X-AL                                 
+XROM 24,19    X-AR                                 
+XROM 24,20    Y-AX                                 
+//
+// -WAND 1F
+//
+XROM 27,00    :-WAND 1F
+XROM 27,00    '-WAND 1F' 
+XROM 27,01    WNDDTA                               
+XROM 27,02    WNDDTX                               
+XROM 27,03    WNDLNK                               
+XROM 27,04    WNDSUB                               
+XROM 27,05    WNDSCN                               
+XROM 27,06    WNDTST                               
+
+// DAVID Assembler
+//
+XROM 02,00    :DAVID-ASSEM
+XROM 02,00    DAVID-ASSEM
+XROM 02,01    ASSM
+XROM 02,02    BEG/END
+XROM 02,03  	BUF>REG
+XROM 02,04   	DISTOA
+XROM 02,05    REG>BUF
