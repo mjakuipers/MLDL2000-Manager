@@ -1,7 +1,7 @@
 object FrmMemEdit: TFrmMemEdit
-  Left = 373
+  Left = -736
   Height = 356
-  Top = 235
+  Top = 85
   Width = 580
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -11,19 +11,18 @@ object FrmMemEdit: TFrmMemEdit
   DragMode = dmAutomatic
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
   OnCreate = OnCreate
-  OnDestroy = FormDestroy
-  LCLVersion = '0.9.28.2'
+  LCLVersion = '2.2.0.4'
   object Label1: TLabel
     Left = 171
-    Height = 14
+    Height = 13
     Top = 12
-    Width = 47
+    Width = 46
     Caption = 'Address'
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object BtnUp: TBitBtn

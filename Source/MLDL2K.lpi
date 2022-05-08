@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="11"/>
+    <Version Value="12"/>
     <PathDelim Value="\"/>
     <General>
-      <MainUnit Value="0"/>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
       <Title Value="MLDL2000 Manager"/>
+      <UseAppBundle Value="False"/>
       <Icon Value="0"/>
     </General>
     <VersionInfo>
@@ -13,8 +16,9 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="9"/>
-      <BuildNr Value="30"/>
-      <StringTable Comments="Released under the GNU license" FileDescription="MLDL2000 Manager" LegalCopyright="(C) 2010-2020 Meindert Kuipers licensed under GPL" ProductVersion="1.9"/>
+      <RevisionNr Value="1"/>
+      <BuildNr Value="53"/>
+      <StringTable Comments="Released under the GNU license" FileDescription="MLDL2000 Manager" LegalCopyright="(C) 2010-2022 Meindert Kuipers licensed under GPL" ProductVersion="1.9"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -24,11 +28,14 @@
       <CompressFinally Value="False"/>
     </PublishOptions>
     <RunParams>
+      <local>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
       <FormatVersion Value="2"/>
       <Modes Count="1">
         <Mode0 Name="default">
           <local>
-            <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+            <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T &apos;Lazarus Run Output&apos; -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
           </local>
         </Mode0>
       </Modes>
@@ -41,10 +48,15 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="20">
+    <Units Count="74">
       <Unit0>
         <Filename Value="MLDL2K.lpr"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="18"/>
+        <CursorPos X="4" Y="61"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="BitBang_Unit.pas"/>
@@ -52,14 +64,30 @@
         <ComponentName Value="BitBang"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="98"/>
+        <CursorPos X="43" Y="124"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="Globals.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="62"/>
+        <CursorPos X="3" Y="90"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="GlobalConstants.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="118"/>
+        <CursorPos X="69" Y="326"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="About.pas"/>
@@ -67,6 +95,11 @@
         <ComponentName Value="AboutBox"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="49"/>
+        <CursorPos X="44" Y="95"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="MemEdit.pas"/>
@@ -74,23 +107,45 @@
         <ComponentName Value="FrmMemEdit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="56"/>
+        <CursorPos Y="93"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="Procs_MLDL.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="15"/>
+        <CursorPos Y="1123"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="D2XXUnit.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="4" Y="220"/>
+        <UsageCount Value="200"/>
       </Unit7>
       <Unit8>
         <Filename Value="PROCS.PAS"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Procs"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="139"/>
+        <CursorPos X="10" Y="166"/>
+        <UsageCount Value="200"/>
       </Unit8>
       <Unit9>
         <Filename Value="HP41_Globals.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="475"/>
+        <CursorPos X="40" Y="518"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="Jtag.pas"/>
@@ -98,6 +153,12 @@
         <ComponentName Value="Frm_JTAG"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="135"/>
+        <CursorPos X="3" Y="1203"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="Tester.pas"/>
@@ -105,15 +166,30 @@
         <ComponentName Value="Frm_Tester"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="59"/>
+        <CursorPos X="43" Y="73"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="Jtag_constants.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="6" Y="37"/>
+        <UsageCount Value="200"/>
       </Unit12>
       <Unit13>
         <Filename Value="Romdis.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RomDis"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="934"/>
+        <CursorPos X="34" Y="957"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="ListWindow.pas"/>
@@ -121,6 +197,12 @@
         <ComponentName Value="FrmLister"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="30"/>
+        <CursorPos X="26" Y="54"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="Preferences.pas"/>
@@ -128,6 +210,12 @@
         <ComponentName Value="FrmPreferences"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="192"/>
+        <CursorPos Y="565"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="ROMHandler.pas"/>
@@ -135,6 +223,16 @@
         <ComponentName Value="FrmROMHandler"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="40"/>
+        <CursorPos X="76" Y="64"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="2">
+          <Item0 Y="4760"/>
+          <Item1 X="74" Y="3512" ID="1"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="IO_Handler.pas"/>
@@ -142,17 +240,508 @@
         <ComponentName Value="Frm_IOHandler"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="42"/>
+        <CursorPos X="41" Y="65"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit17>
       <Unit18>
-        <Filename Value="DisAssembler.pas"/>
-        <IsPartOfProject Value="True"/>
+        <Filename Value="DOC_Handler.pas"/>
+        <ComponentName Value="Frm_UART"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="3"/>
       </Unit18>
       <Unit19>
+        <Filename Value="DisAssembler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="53" Y="835"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="BitBang_Unit.lfm"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="BitBang_Unit.lrs"/>
+        <UsageCount Value="3"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Gauges.pas"/>
+        <CursorPos X="6" Y="67"/>
+        <UsageCount Value="3"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\..\Lazarus\lcl\include\application.inc"/>
+        <TopLine Value="1232"/>
+        <CursorPos Y="1256"/>
+        <UsageCount Value="3"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\..\Lazarus\lcl\include\menuitem.inc"/>
+        <TopLine Value="1037"/>
+        <CursorPos Y="1069"/>
+        <UsageCount Value="3"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\..\Lazarus\lcl\include\customform.inc"/>
+        <TopLine Value="1562"/>
+        <CursorPos Y="1594"/>
+        <UsageCount Value="3"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\..\Lazarus\lcl\include\control.inc"/>
+        <TopLine Value="1040"/>
+        <CursorPos Y="1072"/>
+        <UsageCount Value="36"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\..\Lazarus\lcl\lclproc.pas"/>
+        <UnitName Value="LCLProc"/>
+        <CursorPos Y="1490"/>
+        <UsageCount Value="4"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\..\Lazarus\lcl\include\wincontrol.inc"/>
+        <TopLine Value="3991"/>
+        <CursorPos Y="4023"/>
+        <UsageCount Value="1"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\Lazarus\lcl\include\statuspanels.inc"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="3"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="ROMHandler.lfm"/>
+        <CursorPos X="118" Y="455"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="MLDL2K.lrs"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="114"/>
+        <UsageCount Value="100"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\..\Lazarus\lcl\interfaces\win32\win32listsl.inc"/>
+        <TopLine Value="164"/>
+        <CursorPos Y="196"/>
+        <UsageCount Value="4"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\Lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <TopLine Value="1376"/>
+        <CursorPos Y="1408"/>
+        <UsageCount Value="3"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\Lazarus\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <TopLine Value="517"/>
+        <CursorPos X="15" Y="549"/>
+        <UsageCount Value="4"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\..\Lazarus\lcl\include\customcombobox.inc"/>
+        <TopLine Value="917"/>
+        <CursorPos Y="949"/>
+        <UsageCount Value="1"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="..\..\Lazarus\lcl\interfaces\win32\win32wsstdctrls.pp"/>
+        <UnitName Value="Win32WSStdCtrls"/>
+        <TopLine Value="839"/>
+        <CursorPos Y="871"/>
+        <UsageCount Value="3"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="..\..\Lazarus\lcl\include\listitem.inc"/>
+        <TopLine Value="481"/>
+        <CursorPos X="41" Y="502"/>
+        <UsageCount Value="9"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="..\..\Lazarus\fpc\2.4.0\source\rtl\inc\systemh.inc"/>
+        <TopLine Value="527"/>
+        <CursorPos X="10" Y="559"/>
+        <UsageCount Value="6"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="..\..\Lazarus\fpc\2.4.0\source\rtl\inc\generic.inc"/>
+        <TopLine Value="1761"/>
+        <CursorPos X="7" Y="1767"/>
+        <UsageCount Value="6"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="..\..\Lazarus\lcl\include\customcheckbox.inc"/>
+        <TopLine Value="100"/>
+        <CursorPos Y="132"/>
+        <UsageCount Value="2"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="..\..\Lazarus\lcl\include\listitems.inc"/>
+        <TopLine Value="27"/>
+        <CursorPos Y="55"/>
+        <UsageCount Value="7"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="..\..\Lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <TopLine Value="2550"/>
+        <CursorPos Y="2578"/>
+        <UsageCount Value="7"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="..\..\Lazarus\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <TopLine Value="447"/>
+        <CursorPos X="22" Y="485"/>
+        <UsageCount Value="2"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="..\..\Lazarus\lcl\include\buttoncontrol.inc"/>
+        <TopLine Value="44"/>
+        <CursorPos X="52" Y="107"/>
+        <UsageCount Value="10"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="..\..\Lazarus\lcl\include\treeview.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2196"/>
+        <CursorPos Y="2228"/>
+        <UsageCount Value="28"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="408"/>
+        <UsageCount Value="4"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-base\src\fileinfo.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos X="3" Y="51"/>
+        <UsageCount Value="33"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2291"/>
+        <CursorPos Y="2319"/>
+        <UsageCount Value="8"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\application.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1188"/>
+        <CursorPos Y="1216"/>
+        <UsageCount Value="8"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\comctrls.pp"/>
+        <UnitName Value="ComCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2907"/>
+        <CursorPos X="3" Y="2935"/>
+        <UsageCount Value="2"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\treeview.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2315"/>
+        <CursorPos Y="2350"/>
+        <UsageCount Value="5"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="749"/>
+        <CursorPos X="10" Y="783"/>
+        <UsageCount Value="3"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2215"/>
+        <CursorPos Y="2242"/>
+        <UsageCount Value="10"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\hash\src\crc.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="139"/>
+        <UsageCount Value="3"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\hash\examples\crctest.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="51" Y="33"/>
+        <UsageCount Value="3"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\hash\fpmake.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="3"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-base\src\inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="575"/>
+        <CursorPos X="36" Y="611"/>
+        <UsageCount Value="5"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3318"/>
+        <CursorPos Y="3350"/>
+        <UsageCount Value="10"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\screen.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="764"/>
+        <CursorPos Y="795"/>
+        <UsageCount Value="5"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-db\src\base\db.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="68" Y="1055"/>
+        <UsageCount Value="13"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-db\src\sdf\sdfdata.pp"/>
+        <UnitName Value="SdfData"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <CursorPos X="14" Y="272"/>
+        <UsageCount Value="41"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="88"/>
+        <CursorPos Y="123"/>
+        <UsageCount Value="10"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="71"/>
+        <CursorPos Y="98"/>
+        <UsageCount Value="6"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\interfaces\win32\win32wsstdctrls.pp"/>
+        <UnitName Value="Win32WSStdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="550"/>
+        <CursorPos Y="577"/>
+        <UsageCount Value="6"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-db\src\base\csvdataset.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <CursorPos X="46" Y="23"/>
+        <UsageCount Value="9"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\customedit.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="80"/>
+        <CursorPos Y="108"/>
+        <UsageCount Value="8"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.0.4\source\packages\fcl-base\src\csvreadwrite.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="43" Y="83"/>
+        <UsageCount Value="8"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="csvbase.pas"/>
+        <UnitName Value="TxtBase"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="52" Y="29"/>
+        <UsageCount Value="24"/>
+      </Unit68>
+      <Unit69>
         <Filename Value="txtbase.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="TxtBase"/>
-      </Unit19>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="58"/>
+        <CursorPos X="40" Y="77"/>
+        <UsageCount Value="76"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\customnotebook.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1103"/>
+        <CursorPos Y="1130"/>
+        <UsageCount Value="10"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5385"/>
+        <CursorPos Y="5412"/>
+        <UsageCount Value="10"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="C:\ProgramFiles\Lazarus\lcl\interfaces\win32\win32pagecontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="219"/>
+        <CursorPos Y="248"/>
+        <UsageCount Value="10"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="C:\ProgramFiles\Lazarus\fpc\3.2.2\source\packages\fcl-base\src\inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="223"/>
+        <UsageCount Value="10"/>
+      </Unit73>
     </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="MemEdit.pas"/>
+        <Caret Line="302" Column="12" TopLine="70"/>
+      </Position1>
+      <Position2>
+        <Filename Value="BitBang_Unit.pas"/>
+        <Caret Line="477" Column="14" TopLine="432"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ListWindow.pas"/>
+        <Caret Line="99" Column="12" TopLine="74"/>
+      </Position3>
+      <Position4>
+        <Filename Value="IO_Handler.pas"/>
+        <Caret Line="110" Column="14" TopLine="71"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Romdis.pas"/>
+        <Caret Line="957" Column="34" TopLine="934"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ROMHandler.pas"/>
+        <Caret Line="66" Column="80" TopLine="25"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="37" Column="92" TopLine="1619"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="1210" TopLine="1191"/>
+      </Position8>
+      <Position9>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="1208" Column="8" TopLine="1621"/>
+      </Position9>
+      <Position10>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="1202" Column="20" TopLine="1178"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ROMHandler.pas"/>
+        <Caret Line="66" Column="80" TopLine="37"/>
+      </Position11>
+      <Position12>
+        <Filename Value="MLDL2K.lpr"/>
+        <Caret Line="76" TopLine="29"/>
+      </Position12>
+      <Position13>
+        <Filename Value="MLDL2K.lpr"/>
+        <Caret Line="61" Column="2" TopLine="29"/>
+      </Position13>
+      <Position14>
+        <Filename Value="MLDL2K.lpr"/>
+        <Caret Line="76" TopLine="29"/>
+      </Position14>
+      <Position15>
+        <Filename Value="Preferences.pas"/>
+        <Caret Line="44" Column="37" TopLine="20"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ROMHandler.pas"/>
+        <Caret Line="3162" Column="14" TopLine="3138"/>
+      </Position16>
+      <Position17>
+        <Filename Value="MLDL2K.lpr"/>
+        <Caret Line="70" Column="152" TopLine="29"/>
+      </Position17>
+      <Position18>
+        <Filename Value="MLDL2K.lpr"/>
+        <Caret Line="61" Column="4" TopLine="18"/>
+      </Position18>
+      <Position19>
+        <Filename Value="BitBang_Unit.pas"/>
+        <Caret Line="477" Column="14" TopLine="416"/>
+      </Position19>
+      <Position20>
+        <Filename Value="BitBang_Unit.pas"/>
+        <Caret Line="486" Column="3" TopLine="452"/>
+      </Position20>
+      <Position21>
+        <Filename Value="ListWindow.pas"/>
+        <Caret Line="108" Column="12" TopLine="81"/>
+      </Position21>
+      <Position22>
+        <Filename Value="MemEdit.pas"/>
+        <Caret Line="317" TopLine="277"/>
+      </Position22>
+      <Position23>
+        <Filename Value="Preferences.pas"/>
+        <Caret Line="44" Column="37" TopLine="522"/>
+      </Position23>
+      <Position24>
+        <Filename Value="ROMHandler.pas"/>
+        <Caret Line="3162" Column="14" TopLine="3138"/>
+      </Position24>
+      <Position25>
+        <Filename Value="IO_Handler.pas"/>
+        <Caret Line="110" Column="66" TopLine="87"/>
+      </Position25>
+      <Position26>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="1661" Column="25" TopLine="60"/>
+      </Position26>
+      <Position27>
+        <Filename Value="Jtag.pas"/>
+        <Caret Line="1643" Column="51" TopLine="1620"/>
+      </Position27>
+      <Position28>
+        <Filename Value="Tester.pas"/>
+        <Caret Line="393" Column="14" TopLine="376"/>
+      </Position28>
+      <Position29>
+        <Filename Value="Tester.pas"/>
+        <Caret Line="73" Column="43" TopLine="59"/>
+      </Position29>
+      <Position30>
+        <Filename Value="ListWindow.pas"/>
+        <Caret Line="54" Column="26" TopLine="30"/>
+      </Position30>
+    </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
@@ -173,10 +762,12 @@
         <StackChecks Value="True"/>
       </Checks>
       <VerifyObjMethodCallValidity Value="True"/>
+      <TargetOS Value="win32"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="False"/>
+        <DebugInfoType Value="dsDwarf2Set"/>
       </Debugging>
       <Options>
         <Win32>
@@ -191,4 +782,61 @@
       </Verbosity>
     </Other>
   </CompilerOptions>
+  <Debugging>
+    <Watches Count="12">
+      <Item1>
+        <Expression Value="i"/>
+      </Item1>
+      <Item2>
+        <Expression Value="DisPage[i]"/>
+      </Item2>
+      <Item3>
+        <Expression Value="sl"/>
+      </Item3>
+      <Item4>
+        <Expression Value="TSetReg"/>
+      </Item4>
+      <Item5>
+        <Expression Value="S2"/>
+      </Item5>
+      <Item6>
+        <Expression Value="SS"/>
+      </Item6>
+      <Item7>
+        <Expression Value="Cmt"/>
+      </Item7>
+      <Item8>
+        <Expression Value="S"/>
+      </Item8>
+      <Item9>
+        <Expression Value="Bk"/>
+      </Item9>
+      <Item10>
+        <Expression Value="Text"/>
+      </Item10>
+      <Item11>
+        <Expression Value="CNode.Text"/>
+      </Item11>
+      <Item12>
+        <Expression Value="Res"/>
+      </Item12>
+    </Watches>
+    <Exceptions Count="5">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="Exception"/>
+      </Item4>
+      <Item5>
+        <Name Value="EStringListError"/>
+      </Item5>
+    </Exceptions>
+  </Debugging>
 </CONFIG>

@@ -40,6 +40,9 @@ uses
   IniFiles;
 
 type
+
+  { TFrm_IOHandler }
+
   TFrm_IOHandler = class(TForm)
     BtnWrite: TButton;
     BtnRead: TButton;
@@ -58,8 +61,8 @@ type
     procedure BtnReadClick(Sender: TObject);
     procedure BtnContReadClick(Sender: TObject);
     procedure BtnStopClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure OnCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,14 +80,14 @@ implementation
 
 procedure TFrm_IOHandler.OnCreate(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 const
   T = -1;  // default Top
   L = -1;  // default Left
   W = -1;
   H = -1;
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := TmemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     Frm_IOHandler.Top:= Ini.ReadInteger( 'WindowsPositions', 'IOHandlerTop', T);
     Frm_IOHandler.Left:= Ini.ReadInteger( 'WindowsPositions', 'IOHandlerLeft', L);
@@ -102,12 +105,13 @@ begin
 end;
 
 
-procedure TFrm_IOHandler.FormDestroy(Sender: TObject);
+procedure TFrm_IOHandler.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 begin
   ContRead := false;
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     Ini.WriteInteger( 'WindowsPositions', 'IOHandlerTop', Frm_IOHandler.Top);
     Ini.WriteInteger( 'WindowsPositions', 'IOHandlerLeft', Frm_IOHandler.Left);
@@ -117,7 +121,6 @@ begin
     Ini.Free;
   end;
 end;
-
 
 procedure Update_Status;
 begin

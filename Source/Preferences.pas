@@ -141,9 +141,9 @@ uses ROMHandler;
 
 procedure TFrmPreferences.SaveIni;
 var
-  Ini: TIniFile;
+  Ini: tMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := tMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     // Disassembler section
     Ini.WriteBool('Disassembler', 'Comments', PrefComments);
@@ -213,16 +213,22 @@ begin
     Ini.WriteBool('UserInterface', 'AutoFindROM', PrefAutoFind);
     Ini.WriteBool('UserInterface', 'AutoFindROM', PrefMemType);
 
+    // Remember Windows positions
+    Ini.WriteInteger( 'WindowsPositions', 'PrefTop', FrmPreferences.Top);
+    Ini.WriteInteger( 'WindowsPositions', 'PrefLeft', FrmPreferences.Left);
+
+    Ini.UpdateFile;
+
   finally
-    Ini.Free;
+    Ini.Destroy;
   end;
 end;
 
 procedure TFrmPreferences.ReadIni;
   var
-  Ini: TIniFile;
+  Ini: tMemIniFile;
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := tMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     // Disassembler section
     PrefComments   := Ini.ReadBool('Disassembler', 'Comments', true);
@@ -393,7 +399,7 @@ begin
   if PrefALLTO     = 0 then PrefALLTO     := TimeOut_FLASH_Erase;
   if PrefBlockSize = 0 then PrefBlockSize := 256;
 
-  SaveIni;
+  // SaveIni;
 end;
 
 procedure TFrmPreferences.BtnCancelClick(Sender: TObject);
@@ -406,6 +412,7 @@ end;
 procedure TFrmPreferences.BtnOKClick(Sender: TObject);
 begin
   FrmPreferences.BtnApplyClick(Sender);
+  SaveIni;
   FrmPreferences.Close;
 end;
 
@@ -529,29 +536,40 @@ procedure TFrmPreferences.FormCreate(Sender: TObject);
 // Read Values from INI File into Global Variables
 // Creates the file if it does not exist
 var
-  Ini: TIniFile;
+  Ini: tMemIniFile;
+const
+  T = -1;  // default Top
+  L = -1;  // default Left
+
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := tMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     FrmPreferences.Top  := Ini.ReadInteger( 'WindowsPositions', 'PrefTop', -1);
     FrmPreferences.Left := Ini.ReadInteger( 'WindowsPositions', 'PrefLeft', -1);
+
+    if not WinVisible(FrmPreferences) then begin
+      // window outside current screen? Set to defaults
+      FrmPreferences.Top    := T;
+      FrmPreferences.Left   := L;
+    end;
   finally
     Ini.Free
   end;
 end;
 
+
 procedure TFrmPreferences.FormDestroy(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: tMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
-  try
+//  Ini := tMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+//  try
     // Remember Windows positions
-    Ini.WriteInteger( 'WindowsPositions', 'PrefTop', FrmPreferences.Top);
-    Ini.WriteInteger( 'WindowsPositions', 'PrefLeft', FrmPreferences.Left);
-  finally
-    Ini.Free;
-  end;
+//    Ini.WriteInteger( 'WindowsPositions', 'PrefTop', FrmPreferences.Top);
+//    Ini.WriteInteger( 'WindowsPositions', 'PrefLeft', FrmPreferences.Left);
+//  finally
+//    Ini.Free;
+//  end;
 end;
 
 initialization

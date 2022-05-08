@@ -60,6 +60,10 @@ unit ROMHandler;
 //                window never remains hidden on non-visible monitor         //
 //       Oct 2020 Added import of DM41X .RAM files                           //
 //                Added import of i41CX .RAM files (renamed to .RMA!)        //
+//  1.91 May 2022 Fixed issue with writing inifiles, change to tMemIniFile   //
+//                in all forms and moved code from FormDestroy to FormClose  //
+//                Fixed IniFile defaults for disassembler listing            //
+//                Fixed issue with uploading SR's                            //
 //                                                                           //
 //---------------------------------------------------------------------------//
 
@@ -516,9 +520,9 @@ implementation
 
 procedure TFrmROMHandler.SaveIni;
 var
-  Ini: TIniFile;
+  Ini: tMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := tMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     // Remember Windows positions
     Ini.WriteInteger( 'WindowsPositions', 'ROMHandlerTop', FrmROMHandler.Top);
@@ -538,7 +542,7 @@ end;
 
 procedure TFrmROMHandler.ReadIni;
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
   Code, i: integer;
 const
   T = -1;  // default Top
@@ -546,7 +550,7 @@ const
   W = 500; // default Width
   H = 600; // default Height
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := tMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     // Disassembler section
     PrefComments   := Ini.ReadBool('Disassembler', 'Comments', true);
@@ -576,17 +580,17 @@ begin
     PrefCleanList  := Ini.ReadBool('Disassembler', 'CleanListing', false);
                    // Do not print adress or hexcodes in listing
 
-    PrefDisPos[ 1] := Ini.ReadInteger('Disassembler', 'Pos_Lbl'      , 13);
-    PrefDisPos[ 2] := Ini.ReadInteger('Disassembler', 'Pos_Adr'      ,  6);
-    PrefDisPos[ 3] := Ini.ReadInteger('Disassembler', 'Pos_HexCodes' , 13);
-    PrefDisPos[ 4] := Ini.ReadInteger('Disassembler', 'Pos_Mnem'     , 10);
-    PrefDisPos[ 5] := Ini.ReadInteger('Disassembler', 'Pos_MnemArg1' , 10);
-    PrefDisPos[ 6] := Ini.ReadInteger('Disassembler', 'Pos_MnemArg2' , 10);
-    PrefDisPos[ 7] := Ini.ReadInteger('Disassembler', 'Pos_RefAdr'   ,  7);
-    PrefDisPos[ 8] := Ini.ReadInteger('Disassembler', 'Pos_RefLbl'   , 20);
-    PrefDisPos[ 9] := Ini.ReadInteger('Disassembler', 'Pos_UCodeLn'  ,  4);
-    PrefDisPos[10] := Ini.ReadInteger('Disassembler', 'Pos_HexCode'  ,  5);
-    PrefDisPos[11] := Ini.ReadInteger('Disassembler', 'Pos_Comment'  ,  0);
+    PrefDisPos[ 1] := Ini.ReadInteger('Disassembler', 'Pos_Lbl'      ,  1);
+    PrefDisPos[ 2] := Ini.ReadInteger('Disassembler', 'Pos_Adr'      , 13);
+    PrefDisPos[ 3] := Ini.ReadInteger('Disassembler', 'Pos_HexCodes' , 18);
+    PrefDisPos[ 4] := Ini.ReadInteger('Disassembler', 'Pos_Mnem'     , 31);
+    PrefDisPos[ 5] := Ini.ReadInteger('Disassembler', 'Pos_MnemArg1' , 43);
+    PrefDisPos[ 6] := Ini.ReadInteger('Disassembler', 'Pos_MnemArg2' , 57);
+    PrefDisPos[ 7] := Ini.ReadInteger('Disassembler', 'Pos_RefAdr'   , 57);
+    PrefDisPos[ 8] := Ini.ReadInteger('Disassembler', 'Pos_RefLbl'   ,  0);
+    PrefDisPos[ 9] := Ini.ReadInteger('Disassembler', 'Pos_UCodeLn'  , 31);
+    PrefDisPos[10] := Ini.ReadInteger('Disassembler', 'Pos_HexCode'  , 18);
+    PrefDisPos[11] := Ini.ReadInteger('Disassembler', 'Pos_Comment'  , 71);
 
     // Communication Section
     MPSSEValue  := Ini.ReadInteger('Communication', 'CommSpeed', MPSSE_Speed);
@@ -810,7 +814,7 @@ end;
 
 procedure TFrmROMHandler.FormClose(Sender: TObject; var Act: TCloseAction);
 begin
-  SaveIni;
+  // SaveIni;
 end;
 
 procedure TFrmROMHandler.MemoROMKeyDown(Sender: TObject; var Key: Word;

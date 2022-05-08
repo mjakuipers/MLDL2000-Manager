@@ -82,6 +82,7 @@ type
     procedure BtnFWIDClick(Sender: TObject);
     procedure BtnDbgEnableClick(Sender: TObject);
     procedure BtnProgUESClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure ReadFWID(var IDCODE: string; var FWID: string; var Rslt: integer);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -1195,6 +1196,20 @@ begin
 
 end;
 
+procedure TFrm_JTAG.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var
+  Ini: tMemIniFile;
+begin
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  try
+    Ini.WriteInteger( 'WindowsPositions', 'JTAGTop', Frm_JTAG.Top);
+    Ini.WriteInteger( 'WindowsPositions', 'JTAGLeft', Frm_JTAG.Left);
+  finally
+    Ini.Free;
+  end;
+end;
+
+
 
 
 procedure TFrm_JTAG.BtnDevIDClick(Sender: TObject);
@@ -1616,12 +1631,12 @@ end;
 
 procedure TFrm_JTAG.FormCreate(Sender: TObject);
  var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 const
   T = -1;  // default Top
   L = -1;  // default Left
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := TMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     Frm_JTAG.Top:= Ini.ReadInteger( 'WindowsPositions', 'JTAGTop', T);
     Frm_JTAG.Left:= Ini.ReadInteger( 'WindowsPositions', 'JTAGLeft', L);
@@ -1640,18 +1655,10 @@ end;
 
 procedure TFrm_JTAG.FormDestroy(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 begin
   if JTAGFileOpen then CloseFile(JTAGFile);
   JTAGFileOpen := false;
-
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
-  try
-    Ini.WriteInteger( 'WindowsPositions', 'JTAGTop', Frm_JTAG.Top);
-    Ini.WriteInteger( 'WindowsPositions', 'JTAGLeft', Frm_JTAG.Left);
-  finally
-    Ini.Free;
-  end;
 end;
 
 initialization

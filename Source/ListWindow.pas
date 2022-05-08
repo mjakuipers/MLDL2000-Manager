@@ -43,12 +43,15 @@ uses
   Dialogs, StdCtrls, ComCtrls, LResources, IniFiles, Procs;
 
 type
+
+  { TFrmLister }
+
   TFrmLister = class(TForm)
     EdtList: TMemo;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure EdtListKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +66,7 @@ implementation
 
 procedure TFrmLister.FormCreate(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 const
   T = -1;  // default Top
   L = -1;  // default Left
@@ -71,7 +74,7 @@ const
   H = 600; // default Height
 
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := TMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     FrmLister.Top    := Ini.ReadInteger( 'WindowsPositions', 'ListerTop', T);
     FrmLister.Left   := Ini.ReadInteger( 'WindowsPositions', 'ListerLeft', L);
@@ -91,12 +94,11 @@ begin
   end;
 end;
 
-
-procedure TFrmLister.FormDestroy(Sender: TObject);
+procedure TFrmLister.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     Ini.WriteInteger( 'WindowsPositions', 'ListerTop', FrmLister.Top);
     Ini.WriteInteger( 'WindowsPositions', 'ListerLeft', FrmLister.Left);

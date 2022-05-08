@@ -212,13 +212,13 @@ Const
   FT_Out_Buffer_Index            = FT_Out_Buffer_Size - 1;
 
   // DLL Name
-{$IFDEF win64}
+// {$IFDEF win64}
   FT_DLL_Name                    = 'ftd2xx.dll';
-{$ENDIF}
+// {$ENDIF}
 
-{$IFDEF linux}
-  FT_DLL_Name                    = 'ftd2xx';
-{$ENDIF}
+// {$IFDEF linux}
+//   FT_DLL_Name                    = 'ftd2xx';
+// {$ENDIF}
 
 
 

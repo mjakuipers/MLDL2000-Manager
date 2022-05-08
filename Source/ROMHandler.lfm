@@ -1,7 +1,7 @@
 object FrmROMHandler: TFrmROMHandler
-  Left = 101
+  Left = -839
   Height = 603
-  Top = 178
+  Top = 302
   Width = 747
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'MLDL2000 Manager'
@@ -14,7 +14,7 @@ object FrmROMHandler: TFrmROMHandler
   Menu = MainMenu
   OnClose = FormClose
   OnShow = InitForm
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.2.0.4'
   object Image1: TImage
     Left = 12
     Height = 16
@@ -347,13 +347,14 @@ object FrmROMHandler: TFrmROMHandler
     Height = 511
     Top = 28
     Width = 747
-    ActivePage = ROMSheet
+    ActivePage = SRSheet
     Align = alClient
     Font.Height = -11
     Font.Name = 'Tahoma'
     ParentFont = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 2
+    OnChange = PageControlChange
     object ROMSheet: TTabSheet
       Caption = 'ROM Handler'
       ClientHeight = 485
@@ -413,7 +414,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -603,7 +603,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
           end
           object Label3: TLabel
@@ -615,7 +614,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
           end
           object BtnClearMemo: TButton
@@ -873,7 +871,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -18
             Font.Name = 'Courier New'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
           end
           object LblHex: TLabel
@@ -885,7 +882,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -18
             Font.Name = 'Courier New'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
           end
           object BtnDefault: TButton
@@ -1138,7 +1134,6 @@ object FrmROMHandler: TFrmROMHandler
           Font.Height = -11
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
-          ParentColor = False
           ParentFont = False
         end
         object LblSRAMType: TLabel
@@ -1150,7 +1145,6 @@ object FrmROMHandler: TFrmROMHandler
           Font.Height = -11
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
-          ParentColor = False
           ParentFont = False
         end
         object BtnEraseSector: TButton
@@ -1603,7 +1597,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Format'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1618,7 +1611,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1632,7 +1624,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Title'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1646,7 +1637,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Version'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1660,7 +1650,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Partnumber'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1674,7 +1663,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Author'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1688,7 +1676,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Copyright'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1702,7 +1689,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'License'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1716,7 +1702,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Comments'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1730,7 +1715,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Category'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1744,7 +1728,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Hardware'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1758,7 +1741,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'MEM Mods'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1772,7 +1754,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'XMEM Mods'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1786,7 +1767,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Pages:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1801,7 +1781,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1815,7 +1794,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Custom Hdr'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -1829,7 +1807,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Custom Hdr:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2086,7 +2063,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 5
             Width = 27
             Caption = 'Name'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2097,7 +2073,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 29
             Width = 44
             Caption = 'ID + Rev'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2108,7 +2083,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 5
             Width = 24
             Caption = 'Page'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2119,7 +2093,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 5
             Width = 53
             Caption = 'PageGroup'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2130,7 +2103,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 29
             Width = 23
             Caption = 'Bank'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2141,7 +2113,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 29
             Width = 52
             Caption = 'BankGroup'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2152,7 +2123,6 @@ object FrmROMHandler: TFrmROMHandler
             Top = 53
             Width = 56
             Caption = 'Custom Hdr'
-            ParentColor = False
             ParentShowHint = False
             ShowHint = True
           end
@@ -2166,7 +2136,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2181,7 +2150,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2196,7 +2164,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2211,7 +2178,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowAccelChar = False
@@ -2227,7 +2193,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowAccelChar = False
@@ -2243,7 +2208,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2258,7 +2222,6 @@ object FrmROMHandler: TFrmROMHandler
             Font.Height = -11
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2272,7 +2235,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'XROM:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2286,7 +2248,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Functions:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2300,7 +2261,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'ID/Rev:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2314,7 +2274,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'ROM name:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2328,7 +2287,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Checksum:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2342,7 +2300,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Checksum:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2355,7 +2312,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = '(calculated)'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2368,7 +2324,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = '(from image)'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2382,7 +2337,6 @@ object FrmROMHandler: TFrmROMHandler
             Caption = 'Custom Hdr:'
             Font.Height = -11
             Font.Name = 'Tahoma'
-            ParentColor = False
             ParentFont = False
             ParentShowHint = False
             ShowHint = True
@@ -2640,18 +2594,18 @@ object FrmROMHandler: TFrmROMHandler
   end
   object DlgOpen: TOpenDialog
     Filter = 'ROM/SR/MOD file format|*.rom;*.sr;*.mod;*.hex; *.mdo|Settings Register format|*.sr|ROM format|*.rom|MOD format|*.mod;|DM41X RAM|*.ram|i41CX HEPMAIL|*.rma|Clonix HEX|*.hex|i41CX MAILMOD files|*.html;*.htm;*.txt|ASC format (debug only)|*.asc|RAW file import (testing)|*.raw'
-    left = 32
-    top = 352
+    Left = 32
+    Top = 352
   end
   object DlgSave: TSaveDialog
     Filter = 'ROM file format|*.rom|MOD file format|*.mod|Settings Register format|*.sr'
     Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
-    left = 32
-    top = 296
+    Left = 32
+    Top = 296
   end
   object MainMenu: TMainMenu
-    left = 32
-    top = 240
+    Left = 32
+    Top = 240
     object MnMainF: TMenuItem
       Caption = 'File'
       object MnMainFOpen: TMenuItem
@@ -2731,8 +2685,8 @@ object FrmROMHandler: TFrmROMHandler
     end
   end
   object PopListMLDL: TPopupMenu
-    left = 128
-    top = 296
+    Left = 128
+    Top = 296
     object PopRefresh: TMenuItem
       Caption = 'Refresh List'
       Hint = 'Re-read MLDL contents'
@@ -2760,8 +2714,8 @@ object FrmROMHandler: TFrmROMHandler
     end
   end
   object PopEraseFlash: TPopupMenu
-    left = 128
-    top = 408
+    Left = 128
+    Top = 408
     object PopEraseSector: TMenuItem
       Caption = 'Erase Sector'
       Hint = 'Erase selected Sector'
@@ -2774,8 +2728,8 @@ object FrmROMHandler: TFrmROMHandler
     end
   end
   object PopSR: TPopupMenu
-    left = 128
-    top = 240
+    Left = 128
+    Top = 240
     object PopCollapseAll: TMenuItem
       Caption = 'Collapse All'
       OnClick = PopCollapseAllClick
@@ -2802,8 +2756,8 @@ object FrmROMHandler: TFrmROMHandler
     end
   end
   object PopMOD: TPopupMenu
-    left = 80
-    top = 296
+    Left = 80
+    Top = 296
     object DeleteSelectedPages: TMenuItem
       Caption = 'Delete Selected Pages'
       OnClick = BtnDelMODClick
@@ -2900,8 +2854,8 @@ object FrmROMHandler: TFrmROMHandler
     end
   end
   object PopMemo: TPopupMenu
-    left = 128
-    top = 352
+    Left = 128
+    Top = 352
     object PopClearText: TMenuItem
       Caption = 'Clear Text'
       OnClick = BtnClearMemoClick

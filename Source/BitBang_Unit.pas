@@ -44,6 +44,9 @@ uses
   Procs_MLDL, D2XXUnit, IniFiles;
 
 type
+
+  { TBitBang }
+
   TBitBang = class(TForm)
     StatusBar: TStatusBar;
     Pnl_MLDLStatus: TPanel;
@@ -102,6 +105,7 @@ type
     procedure BtnWriteBClick(Sender: TObject);
     procedure BtnRefreshClick(Sender: TObject);
     procedure BtnContInClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure TmrIOTimer(Sender: TObject);
     procedure BtnX_ENClick(Sender: TObject);
     procedure BtnX_CLKClick(Sender: TObject);
@@ -118,7 +122,6 @@ type
     procedure BtnJTAGEnabledClick(Sender: TObject);
     procedure Btn_CPLDClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -225,6 +228,7 @@ begin
   end;
   TmrIO.Enabled := ContIn or ContToggle or ContAA55 or ContCount or ContRead;
 end;
+
 
 
 procedure TBitBang.BtnContOutClick(Sender: TObject);
@@ -448,12 +452,12 @@ end;
 
 procedure TBitBang.FormCreate(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 const
   T = -1;  // default Top
   L = -1;  // default Left
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := TMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     BitBang.Top:= Ini.ReadInteger( 'WindowsPositions', 'BitBangTop', T);
     BitBang.Left:= Ini.ReadInteger( 'WindowsPositions', 'BitBangLeft', L);
@@ -470,11 +474,11 @@ begin
 end;
 
 
-procedure TBitBang.FormDestroy(Sender: TObject);
+procedure TBitBang.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     Ini.WriteInteger( 'WindowsPositions', 'BitBangTop', BitBang.Top);
     Ini.WriteInteger( 'WindowsPositions', 'BitBangLeft', BitBang.Left);
@@ -482,6 +486,7 @@ begin
     Ini.Free;
   end;
 end;
+
 
 
 initialization

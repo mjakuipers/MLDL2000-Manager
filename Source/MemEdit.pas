@@ -44,6 +44,9 @@ uses
   Procs, Procs_MLDL, IniFiles;
 
 type
+
+  { TFrmMemEdit }
+
   TFrmMemEdit = class(TForm)
     BtnUp: TBitBtn;
     BtnDn: TBitBtn;
@@ -83,12 +86,10 @@ type
     procedure BtnDnClick(Sender: TObject);
     procedure BtnWriteClick(Sender: TObject);
     procedure DoRead(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure OnCreate(Sender: TObject);
     procedure EdtAddrKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-//    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormDestroy(Sender: TObject);
-
 //    procedure EdtAddrChange(Sender: TObject);
 
   private
@@ -165,6 +166,8 @@ begin
   end;
 
 end;
+
+
 
 procedure TFrmMemEdit.BtnReadClick(Sender: TObject);
 // Read from MLDL2000 memory
@@ -294,12 +297,11 @@ begin
   if Key = VK_RETURN then DoRead(Sender);
 end;
 
-
-procedure TFrmMemEdit.FormDestroy(Sender: TObject);
+procedure TFrmMemEdit.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
   try
     Ini.WriteInteger( 'WindowsPositions', 'MemEditTop', FrmMemEdit.Top);
     Ini.WriteInteger( 'WindowsPositions', 'MemEditLeft', FrmMemEdit.Left);

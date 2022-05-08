@@ -1,7 +1,7 @@
 object Frm_JTAG: TFrm_JTAG
-  Left = 1222
+  Left = -865
   Height = 580
-  Top = 126
+  Top = -99
   Width = 550
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -11,9 +11,10 @@ object Frm_JTAG: TFrm_JTAG
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = [fsBold]
+  OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.2.0.4'
   object Label1: TLabel
     Left = 7
     Height = 13
@@ -23,7 +24,6 @@ object Frm_JTAG: TFrm_JTAG
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Label2: TLabel
@@ -35,7 +35,6 @@ object Frm_JTAG: TFrm_JTAG
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Label3: TLabel
@@ -47,7 +46,6 @@ object Frm_JTAG: TFrm_JTAG
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Label4: TLabel
@@ -59,7 +57,6 @@ object Frm_JTAG: TFrm_JTAG
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object Label5: TLabel
@@ -71,7 +68,6 @@ object Frm_JTAG: TFrm_JTAG
     Font.Height = -27
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
-    ParentColor = False
     ParentFont = False
   end
   object MemoJTAG: TMemo
@@ -360,7 +356,7 @@ object Frm_JTAG: TFrm_JTAG
   end
   object DlgOpen: TOpenDialog
     Filter = 'XSVF file|*.xsvf'
-    left = 556
-    top = 8
+    Left = 556
+    Top = 8
   end
 end

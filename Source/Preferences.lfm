@@ -13,7 +13,7 @@ object FrmPreferences: TFrmPreferences
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  LCLVersion = '0.9.28.2'
+  LCLVersion = '2.2.0.4'
   object GroupBox1: TGroupBox
     Left = 0
     Height = 392
@@ -21,7 +21,7 @@ object FrmPreferences: TFrmPreferences
     Width = 519
     Align = alClient
     Caption = 'Disassembler Settings'
-    ClientHeight = 374
+    ClientHeight = 371
     ClientWidth = 515
     Font.Height = -13
     Font.Name = 'Tahoma'
@@ -32,164 +32,150 @@ object FrmPreferences: TFrmPreferences
     TabOrder = 0
     object Label13: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'min length 12 recommended'
       Top = 25
-      Width = 31
+      Width = 30
       Caption = 'Label'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label14: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = '4 hex characters'
       Top = 50
-      Width = 47
+      Width = 46
       Caption = 'Address'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label15: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'sets of 3 digits'
       Top = 75
-      Width = 61
+      Width = 60
       Caption = 'Hex Codes'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label16: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'Main Mnemonic'
       Top = 100
-      Width = 59
+      Width = 58
       Caption = 'Mnemonic'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label17: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = '1st Mnemonic Argument'
       Top = 126
-      Width = 67
+      Width = 66
       Caption = 'Mnem Arg1'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label18: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = '2nd Mnemonic argument'
       Top = 150
-      Width = 67
+      Width = 66
       Caption = 'Mnem Arg2'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label19: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'Address Refferred to'
       Top = 175
-      Width = 101
+      Width = 100
       Caption = 'Referred Address'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label20: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'Label referred to'
       Top = 200
-      Width = 85
+      Width = 84
       Caption = 'Referred Label'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label21: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'User Code line number'
       Top = 225
-      Width = 100
+      Width = 99
       Caption = 'User Code Line #'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label22: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'single hex code for instruction'
       Top = 250
-      Width = 55
+      Width = 54
       Caption = 'Hex Code'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label23: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Hint = 'Generated Comments'
       Top = 275
-      Width = 62
+      Width = 61
       Caption = 'Comments'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label24: TLabel
       Left = 273
-      Height = 17
+      Height = 16
       Top = 1
-      Width = 178
+      Width = 177
       Caption = 'Disassembler Line Positions'
-      ParentColor = False
     end
     object Label26: TLabel
       Left = 298
-      Height = 17
+      Height = 16
       Top = 296
-      Width = 185
+      Width = 184
       Caption = 'value 0 will not show parameter'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label25: TLabel
       Left = 33
-      Height = 17
+      Height = 16
       Top = 346
-      Width = 189
+      Width = 188
       Caption = '(SDK41 mnemonics recommend)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object ChkComments: TCheckBox
@@ -256,7 +242,7 @@ object FrmPreferences: TFrmPreferences
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 1
-      ClientHeight = 79
+      ClientHeight = 76
       ClientWidth = 205
       Font.Height = -13
       Font.Name = 'Tahoma'
@@ -547,7 +533,7 @@ object FrmPreferences: TFrmPreferences
     Width = 519
     Align = alTop
     Caption = 'MLDL2000 Communication'
-    ClientHeight = 175
+    ClientHeight = 172
     ClientWidth = 515
     Font.Height = -13
     Font.Name = 'Tahoma'
@@ -558,163 +544,149 @@ object FrmPreferences: TFrmPreferences
     TabOrder = 1
     object Label1: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = '0=high speed (6 MHz); 65535=slowest'
       Top = 12
-      Width = 78
+      Width = 77
       Caption = 'Comm Speed'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label3: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = 'FLASH Byte Program Time Out (default 1 sec)'
       Top = 108
-      Width = 112
+      Width = 111
       Caption = 'Flash Prog Timeout'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label4: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = 'USB Communication Time Out (default 1 sec)'
       Top = 84
-      Width = 75
+      Width = 74
       Caption = 'USB Timeout'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label2: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = '0=high speed (6 MHz); 65535=slowest'
       Top = 60
-      Width = 70
+      Width = 69
       Caption = 'JTAG Speed'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label5: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = 'FLASH Sector Erase Time Out (default 5 sec)'
       Top = 132
-      Width = 125
+      Width = 124
       Caption = 'Sector Erase Timeout'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label6: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = 'FLASH Erase ALL Time Out (default 5 sec)'
       Top = 155
-      Width = 102
+      Width = 101
       Caption = 'Erase All Timeout'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label7: TLabel
       Left = 16
-      Height = 17
+      Height = 16
       Hint = 'Communication Block Size (must be power of 2)'
       Top = 36
-      Width = 99
+      Width = 98
       Caption = 'Comm Block Size'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object LblMPSSE: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 12
-      Width = 53
+      Width = 52
       Caption = '0000 bps'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object LblJTAG: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 60
-      Width = 53
+      Width = 52
       Caption = '0000 bps'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label8: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 108
-      Width = 80
+      Width = 79
       Caption = '(milliseconds)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label9: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 84
-      Width = 80
+      Width = 79
       Caption = '(milliseconds)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label10: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 132
-      Width = 80
+      Width = 79
       Caption = '(milliseconds)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label11: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 155
-      Width = 80
+      Width = 79
       Caption = '(milliseconds)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object Label12: TLabel
       Left = 236
-      Height = 17
+      Height = 16
       Top = 36
-      Width = 41
+      Width = 40
       Caption = '(bytes)'
       Font.Height = -13
       Font.Name = 'Tahoma'
-      ParentColor = False
       ParentFont = False
     end
     object EdtCommSpeed: TEdit

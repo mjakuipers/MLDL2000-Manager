@@ -30,6 +30,7 @@ program MLDL2K;
 //                removed Delphi compatibility                               //
 //                compiled with Lazarus 1.8.0, FPC 3.0.4                     //
 //  1.90 Jan 2021 Final and last version                                     //
+//  1.91 May 2022 Final version, issue fixed, see RomHandler comments	     //
 //                                                                           //
 //---------------------------------------------------------------------------//
 
@@ -37,7 +38,7 @@ uses
 {$IFDEF win32}
   ShareMem,
 {$ENDIF}
-  Forms, LResources, sdflaz, Interfaces,
+  Forms, sdflaz, Interfaces,
   BitBang_Unit in 'BitBang_Unit.pas' {BitBang},
   Globals in 'Globals.pas',
   // GlobalConstants in 'GlobalConstants.pas',
@@ -57,11 +58,8 @@ uses
   IO_Handler in 'IO_Handler.pas' {Frm_IOHandler},
   DisAssembler in 'DisAssembler.pas';
 
-{$IFDEF win32}
-  {$R *.RES}
-{$ENDIF}
 
-//{$IFDEF WINDOWS}{$R MLDL2K.rc}{$ENDIF}
+// {$R *.res}
 
 begin
   Application.Title:='MLDL2000 Manager';

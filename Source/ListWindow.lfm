@@ -8,9 +8,9 @@ object FrmLister: TFrmLister
   ClientWidth = 609
   Font.Height = -11
   Font.Name = 'Tahoma'
+  OnClose = FormClose
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.2.0.4'
   object EdtList: TMemo
     Left = 0
     Height = 545

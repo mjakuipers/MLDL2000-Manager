@@ -41,6 +41,9 @@ uses
   Procs, Math, StrUtils, IniFiles;
 
 type
+
+  { TFrm_Tester }
+
   TFrm_Tester = class(TForm)
     BtnSRAM: TButton;
     BtnFLASH: TButton;
@@ -66,8 +69,8 @@ type
     procedure BtnTestAllClick(Sender: TObject);
     procedure BtnQuickALLClick(Sender: TObject);
     procedure BtnProductionClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
 
   private
     { Private declarations }
@@ -373,15 +376,28 @@ begin   // BtnProductionClick
 
 end;
 
+procedure TFrm_Tester.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var
+  Ini: TMemIniFile;
+begin
+  Ini := TMemIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
+  try
+    Ini.WriteInteger( 'WindowsPositions', 'TesterTop', Frm_Tester.Top);
+    Ini.WriteInteger( 'WindowsPositions', 'TesterLeft', Frm_Tester.Left);
+  finally
+    Ini.Free;
+  end;
+end;
+
 
 procedure TFrm_Tester.FormCreate(Sender: TObject);
 var
-  Ini: TIniFile;
+  Ini: TMemIniFile;
 const
   T = -1;  // default Top
   L = -1;  // default Left
 begin
-  Ini := TIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
+  Ini := TMemIniFile.Create( ChangeFileExt( Application.ExeName, '.INI' ) );
   try
     Frm_Tester.Top:= Ini.ReadInteger( 'WindowsPositions', 'TesterTop', T);
     Frm_Tester.Left:= Ini.ReadInteger( 'WindowsPositions', 'TesterLeft', L);
@@ -398,20 +414,6 @@ begin
 end;
 
 
-
-
-procedure TFrm_Tester.FormDestroy(Sender: TObject);
-var
-  Ini: TIniFile;
-begin
-  Ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI' ));
-  try
-    Ini.WriteInteger( 'WindowsPositions', 'TesterTop', Frm_Tester.Top);
-    Ini.WriteInteger( 'WindowsPositions', 'TesterLeft', Frm_Tester.Left);
-  finally
-    Ini.Free;
-  end;
-end;
 
 initialization
   {$i Tester.lrs}
