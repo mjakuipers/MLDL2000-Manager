@@ -186,39 +186,5 @@ the standard way. These drivers and installation instrcutions can be downloaded
 from the FTDI website: www.ftdichip.com
 
 
-The collection of sources of M2kM are the following files
-
-MLDL2K.INI				- ini file with preferences for M2kM
-SYSTEMLABELS.TXT	- textfile with labels for the disassembler
-XROM.TXT					- textfile with XROM numbers for the disassembler
-README.TXT				- this file
-MLDL2K.bdsproj		- Delphi project file for M2kM
-MLDL2K.cfg				- Delphi configuration file for M2kM
-
-- code source -------- form source ------- description
-About.pas 						about.dfm						- About unit
-BitBang_Unit.pas			bitbang_unit.dfm	 	- Bitbang unit
-D2xxUnit.pas															- FTDI interface to FT2232C
-GlobalConstants.pas												- Various global constants
-Globals.pas																- Various global variables
-HP41_Globals.pas													- HP41 related globals constants and variables
-Jtag.pas							jtag.dfm						- JTAG Firmware upgrade unit
-Jtag_constants.pas												- JTAG related constants
-ListWindow.pas				ListWindow.dfm			- Lister window for the disassembler
-MemEdit.pas						MemEdit.dfm					- Memory Editor
-MLDL2K.dpr																- M2kM main project source
-Preferences.pas				Preferences.dfm			- Preferences dialog
-Procs.pas																	- General support functions
-Procs_MLDL.pas														- Hardware dependent support functions
-Romdis.pas																- Core disassembler functions
-ROMHandler.pas				ROMHandler.dfm			- Main ROM Handler
-Tester.pas						Tester.dfm					- MLDL200 test routines
-IO_Handler.pas        IO_Hanlder.dfm      - HP41 mcode communication
-
-
-M2kM was compiled using the following product (Turbo Delphi Explorer)
-	Borland® Delphi® for Microsoft® Windows™ Version 10.0.2558.35231
-	Update 2 Copyright © 2005 Borland® Software Corporation.
-To obtain a copy, see www.borland.com or www.turboexplorer.com
 
 
