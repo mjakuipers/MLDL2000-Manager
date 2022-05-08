@@ -45,7 +45,7 @@ These are now maintained in the standalone ROMHandler application which does not
 have any MLDL2000 or other hardware dependencies. Please use this for up-to-date 
 disassembly and taking care of MOD files.
 
-
+M2kM is written in Object Pascal and compiled with Lazarus, tested on Windows 10.
 
 Changes in V1.70 Final Release
 ------------------------------------------------
@@ -161,17 +161,17 @@ Known issues:
 - handling MOD files under Windows Vista may be problematic
 - MOD files can not be read-only
 
-
-
 The executable of the MLDL2000 Manager software (M2kM) consist of the following
 files:
 
-MLDL2K.exe	  		- the executable
-MLDL2K.INI				- ini file with preferences for M2kM
-borlndmm.dll			- Borland memory manager
-SYSTEMLABELS.TXT	- textfile with labels for the disassembler
-XROM.TXT					- textfile with XROM numbers for the disassembler
-README.TXT				- this file
+MLDL2K.exe        - the executable
+MLDL2K.INI        - ini file with preferences for M2kM
+fpcmemdll.dll     - free pascal shared memory manager
+SYSTEMLABELS.TXT  - textfile with labels for the disassembler
+XROM.TXT          - textfile with XROM numbers for the disassembler
+README.TXT        - this file
+
+M2kM is written in Object Pascal and compiled with Lazarus.
 
 All files should be installed in the same directory. M2kM has no installer and
 does not use the Windows registry. Uninstalling is done by deleting the files
